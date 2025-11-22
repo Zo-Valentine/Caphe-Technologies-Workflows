@@ -1,72 +1,217 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# ☕ Caphè Technologies Workflows
 
-# n8n - Secure Workflow Automation for Technical Teams
+**Enterprise Workflow Automation Platform**
 
-n8n is a workflow automation platform that gives technical teams the flexibility of code with the speed of no-code. With 400+ integrations, native AI capabilities, and a fair-code license, n8n lets you build powerful automations while maintaining full control over your data and deployments.
+Caphè Technologies Workflows is a comprehensive workflow automation ecosystem built on n8n, featuring production-ready templates, a powerful API server, and intuitive frontend interfaces for healthcare staffing and enterprise automation needs.
 
-![n8n.io - Screenshot](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot-readme.png)
+![Project Banner](./assets/n8n-screenshot.png)
 
-## Key Capabilities
+## 🚀 Overview
 
-- **Code When You Need It**: Write JavaScript/Python, add npm packages, or use the visual interface
-- **AI-Native Platform**: Build AI agent workflows based on LangChain with your own data and models
-- **Full Control**: Self-host with our fair-code license or use our [cloud offering](https://app.n8n.cloud/login)
-- **Enterprise-Ready**: Advanced permissions, SSO, and air-gapped deployments
-- **Active Community**: 400+ integrations and 900+ ready-to-use [templates](https://n8n.io/workflows)
+This repository contains a complete workflow automation solution with:
 
-## Quick Start
+- **400+ Production-Ready Workflows**: Categorized templates for healthcare, HR, marketing, finance, and more
+- **Python API Server**: RESTful API for workflow management and integration
+- **React Frontend Applications**: Modern UI for workflow browsing and management
+- **Healthcare Focus**: Specialized workflows for staffing, compliance, and patient care
+- **AI-Powered Automation**: LangChain integration for intelligent workflow processing
 
-Try n8n instantly with [npx](https://docs.n8n.io/hosting/installation/npm/) (requires [Node.js](https://nodejs.org/en/)):
+## 📦 Project Structure
 
 ```
+Caphè-Technologies-Workflows/
+├── workflows/              # Workflow templates organized by category
+├── frameworks/
+│   └── caphe-workflows/   # Python API server
+├── caphe-workflows-ui/    # Primary React frontend
+├── caphe-workflows-frontend/ # Alternative frontend interface
+├── scripts/               # Deployment and integration scripts
+└── packages/              # n8n core packages and extensions
+```
+
+## 🎯 Key Features
+
+### Workflow Library
+- **12 Industry Categories**: Marketing, Healthcare, Finance, HR, IT, and more
+- **48+ Subcategories**: Specialized workflow collections
+- **Production-Ready**: Tested and documented templates
+- **Metadata-Driven**: Rich metadata for search and discovery
+
+### API Server
+- **RESTful API**: Full workflow CRUD operations
+- **WebSocket Support**: Real-time workflow updates
+- **Search & Filter**: Advanced workflow discovery
+- **Category Management**: Organized workflow browsing
+
+### Frontend Applications
+- **Modern React UI**: Built with Vite for fast performance
+- **Responsive Design**: Works on desktop and mobile
+- **Workflow Preview**: Visual workflow representation
+- **One-Click Import**: Easy workflow installation
+
+## 🏥 Healthcare Workflows
+
+Specialized workflows for healthcare staffing and operations:
+
+- **Staffing & Recruitment**: Job applications, resume parsing, interview scheduling
+- **Compliance**: License verification, background checks, credential management
+- **Communication**: Patient notifications, candidate follow-ups, automated messaging
+- **Operations**: Shift matching, availability tracking, employee referrals
+
+## 🔧 Quick Start
+
+### Prerequisites
+- Node.js 18+ (for n8n and frontend)
+- Python 3.9+ (for API server)
+- Docker (optional, for containerized deployment)
+
+### Running the API Server
+
+```bash
+# Navigate to the framework directory
+cd frameworks/caphe-workflows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the server
+python3 run.py
+```
+
+The API server will be available at `http://localhost:8000`
+
+### Running the Frontend
+
+```bash
+# Navigate to the UI directory
+cd caphe-workflows-ui
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The frontend will be available at `http://localhost:5173`
+
+### Using n8n
+
+```bash
+# Using npx
 npx n8n
+
+# Or with Docker
+docker run -it --rm \
+  --name n8n \
+  -p 5678:5678 \
+  -v n8n_data:/home/node/.n8n \
+  docker.n8n.io/n8nio/n8n
 ```
 
-Or deploy with [Docker](https://docs.n8n.io/hosting/installation/docker/):
+Access n8n at `http://localhost:5678`
 
+## 📚 Documentation
+
+- **Workflow Library**: See [workflows/README.md](./workflows/README.md)
+- **API Documentation**: See [frameworks/caphe-workflows/README.md](./frameworks/caphe-workflows/README.md)
+- **Deployment Guide**: See [DEPLOYMENT_SUCCESS_REPORT.md](./DEPLOYMENT_SUCCESS_REPORT.md)
+- **n8n Documentation**: [docs.n8n.io](https://docs.n8n.io)
+
+## �️ Development
+
+### Project Scripts
+
+```bash
+# Validate workflow metadata
+python3 scripts/validate_metadata.py
+
+# Fix metadata issues
+python3 scripts/fix_metadata.py
+
+# Deploy integration
+python3 scripts/deploy_integration.py
+
+# Generate workflow index
+node scripts/generate-index.js
 ```
-docker volume create n8n_data
-docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+
+### Environment Setup
+
+```bash
+# Activate Python virtual environment
+source activate_env.sh
+
+# Or manually
+source caphe.env/bin/activate
 ```
 
-Access the editor at http://localhost:5678
+## 🏗️ Architecture
 
-## Resources
+### Backend (Python)
+- **Flask API**: RESTful endpoints for workflow management
+- **WebSocket Server**: Real-time updates and communication
+- **File-Based Storage**: JSON workflows with metadata
+- **Search Engine**: Fast workflow discovery and filtering
 
-- 📚 [Documentation](https://docs.n8n.io)
-- 🔧 [400+ Integrations](https://n8n.io/integrations)
-- 💡 [Example Workflows](https://n8n.io/workflows)
-- 🤖 [AI & LangChain Guide](https://docs.n8n.io/advanced-ai/)
-- 👥 [Community Forum](https://community.n8n.io)
-- 📖 [Community Tutorials](https://community.n8n.io/c/tutorials/28)
+### Frontend (React + TypeScript)
+- **Vite**: Fast build tool and dev server
+- **React 18**: Modern component architecture
+- **TypeScript**: Type-safe development
+- **Responsive Design**: Mobile-first approach
 
-## Support
+### Workflow Platform (n8n)
+- **Node-Based Editor**: Visual workflow creation
+- **400+ Integrations**: Connect to any service
+- **AI Capabilities**: LangChain integration
+- **Self-Hosted**: Full data control
 
-Need help? Our community forum is the place to get support and connect with other users:
-[community.n8n.io](https://community.n8n.io)
+## 📊 Workflow Categories
 
-## License
+| Category | Workflows | Description |
+|----------|-----------|-------------|
+| Healthcare | 15+ | Staffing, compliance, patient care |
+| Human Resources | 10+ | Recruitment, onboarding, management |
+| Marketing & Sales | 12+ | Campaigns, lead generation, CRM |
+| Finance & Accounting | 8+ | Invoicing, payments, reporting |
+| Customer Service | 10+ | Support, ticketing, communication |
+| IT & Development | 12+ | DevOps, monitoring, deployment |
+| Data Analytics | 8+ | Collection, reporting, BI |
+| Content & Media | 6+ | Publishing, processing, management |
+| E-commerce | 8+ | Orders, inventory, fulfillment |
+| Operations | 10+ | Logistics, supply chain, inventory |
+| Education | 6+ | Enrollment, grading, communication |
+| General Utilities | 15+ | Tools, scheduling, notifications |
 
-n8n is [fair-code](https://faircode.io) distributed under the [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) and [n8n Enterprise License](https://github.com/n8n-io/n8n/blob/master/LICENSE_EE.md).
+## 🤝 Contributing
 
-- **Source Available**: Always visible source code
-- **Self-Hostable**: Deploy anywhere
-- **Extensible**: Add your own nodes and functionality
+We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details.
 
-[Enterprise licenses](mailto:license@n8n.io) available for additional features and support.
+## 📝 License
 
-Additional information about the license model can be found in the [docs](https://docs.n8n.io/sustainable-use-license/).
+This project builds upon n8n, which is [fair-code](https://faircode.io) distributed under the [Sustainable Use License](./LICENSE.md).
 
-## Contributing
+Caphè Technologies Workflows additions and customizations are proprietary to Caphè Technologies.
 
-Found a bug 🐛 or have a feature idea ✨? Check our [Contributing Guide](https://github.com/n8n-io/n8n/blob/master/CONTRIBUTING.md) to get started.
+## 🔗 Resources
 
-## Join the Team
+- **Caphè Technologies**: [Coming Soon]
+- **n8n Platform**: [n8n.io](https://n8n.io)
+- **Documentation**: [docs.n8n.io](https://docs.n8n.io)
+- **Community**: [community.n8n.io](https://community.n8n.io)
 
-Want to shape the future of automation? Check out our [job posts](https://n8n.io/careers) and join our team!
+## 📧 Support
 
-## What does n8n mean?
+For support and inquiries:
+- **GitHub Issues**: [Report bugs or request features](https://github.com/Zo-Valentine/Caph-Technologies-Workflows/issues)
+- **Email**: Contact Caphè Technologies for enterprise support
 
-**Short answer:** It means "nodemation" and is pronounced as n-eight-n.
+## 🌟 Acknowledgments
 
-**Long answer:** "I get that question quite often (more often than I expected) so I decided it is probably best to answer it here. While looking for a good name for the project with a free domain I realized very quickly that all the good ones I could think of were already taken. So, in the end, I chose nodemation. 'node-' in the sense that it uses a Node-View and that it uses Node.js and '-mation' for 'automation' which is what the project is supposed to help with. However, I did not like how long the name was and I could not imagine writing something that long every time in the CLI. That is when I then ended up on 'n8n'." - **Jan Oberhauser, Founder and CEO, n8n.io**
+Built on the powerful [n8n](https://n8n.io) workflow automation platform. Special thanks to the n8n community for their excellent foundation.
+
+---
+
+**Last Updated**: November 22, 2025  
+**Version**: 1.0.0  
+**Repository**: [Caphè-Technologies-Workflows](https://github.com/Zo-Valentine/Caph-Technologies-Workflows)
