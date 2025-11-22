@@ -1,0 +1,63 @@
+{
+  "name": "Voice Assistant Agent (with Telegram)",
+  "description": "AI-powered voice assistant that processes voice messages through Telegram, transcribes them, and responds with intelligent answers",
+  "category": "customer-service",
+  "subcategory": "chat-automation",
+  "difficulty": "advanced",
+  "tags": [
+    "voice",
+    "telegram",
+    "speech-to-text",
+    "ai-agent",
+    "chat",
+    "voice-assistant",
+    "transcription"
+  ],
+  "integrations": [
+    "Telegram",
+    "OpenAI Whisper",
+    "OpenAI GPT",
+    "LangChain"
+  ],
+  "useCase": "Create a voice-enabled chatbot on Telegram that can receive voice messages, transcribe them to text, process with AI, and send back text responses. Perfect for hands-free customer support or personal assistants.",
+  "requirements": [
+    "Telegram Bot Token (create via BotFather)",
+    "OpenAI API key with access to Whisper and GPT models",
+    "n8n instance with internet-accessible webhook URL",
+    "Your Telegram User ID"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "30 minutes",
+  "features": [
+    "Voice message transcription using OpenAI Whisper",
+    "Intelligent responses using GPT models",
+    "Conversation memory (remembers last 10 messages)",
+    "Works exclusively with authorized user IDs",
+    "Handles both voice and text messages",
+    "Real-time processing via Telegram webhooks"
+  ],
+  "limitations": [
+    "Telegram-only (no other messaging platforms)",
+    "Requires publicly accessible n8n instance",
+    "OpenAI API costs for transcription and responses",
+    "User ID must be configured in advance",
+    "Voice messages only (no video processing)"
+  ],
+  "support": {
+    "documentation": "https://docs.n8n.io",
+    "video": "",
+    "contact": "https://community.n8n.io"
+  },
+  "pricing": {
+    "n8nPlan": "Community (Free) or higher",
+    "externalServices": "OpenAI API (Whisper ~$0.006/minute, GPT varies by model), Telegram (free)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

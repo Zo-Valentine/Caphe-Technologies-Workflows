@@ -1,0 +1,31 @@
+{
+  "name": "Interview Scheduling Automation",
+  "description": "Automated interview scheduling with Google Calendar sync, sends confirmation emails to candidates and interviewers with calendar invites",
+  "category": "healthcare",
+  "subcategory": "Appointments",
+  "difficulty": "beginner",
+  "tags": [
+    "healthcare",
+    "scheduling",
+    "interviews",
+    "calendar",
+    "automation",
+    "recruitment"
+  ],
+  "integrations": [
+    "Webhook",
+    "Google Calendar",
+    "Email (SMTP)"
+  ],
+  "useCase": "Automate interview scheduling for healthcare candidates with instant calendar invites and email confirmations",
+  "estimatedSetupTime": "15-20 minutes",
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

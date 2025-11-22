@@ -1,0 +1,52 @@
+{
+  "name": "Build Your First AI Agent - Tutorial",
+  "description": "Step-by-step tutorial workflow that teaches you how to build AI agents with tools in n8n",
+  "category": "general-utilities",
+  "subcategory": "notifications",
+  "difficulty": "beginner",
+  "tags": [
+    "tutorial",
+    "ai-agent",
+    "learning",
+    "education",
+    "guide",
+    "langchain",
+    "tools"
+  ],
+  "integrations": [
+    "OpenAI",
+    "LangChain"
+  ],
+  "useCase": "Interactive tutorial that guides you through creating your first AI agent with tool-calling capabilities. Perfect for learning n8n's AI features.",
+  "requirements": [
+    "OpenAI API key",
+    "n8n instance",
+    "Basic understanding of n8n interface"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "30 minutes",
+  "features": [
+    "Interactive tutorial format",
+    "Step-by-step agent building",
+    "Tool creation examples",
+    "Best practices included",
+    "Foundation for advanced agents"
+  ],
+  "limitations": [
+    "Educational purpose only",
+    "Requires following tutorial steps",
+    "Basic example implementation"
+  ],
+  "pricing": {
+    "n8nPlan": "Community (Free)",
+    "externalServices": "OpenAI (pay-per-use)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

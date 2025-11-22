@@ -1,0 +1,120 @@
+{
+  "name": "Healthcare Staffing - Candidate Segmentation",
+  "description": "Automatically segment nursing candidates by specialty (ICU, ER, Med-Surg, Pediatrics), experience level, location, shift preference, pay tier, and engagement score. Routes hot leads for immediate follow-up.",
+  "category": "healthcare",
+  "subcategory": "Compliance",
+  "difficulty": "intermediate",
+  "tags": [
+    "candidate-segmentation",
+    "lead-scoring",
+    "healthcare-staffing",
+    "recruitment-automation",
+    "nurse-recruitment",
+    "data-enrichment",
+    "lead-routing"
+  ],
+  "integrations": [
+    "Google Sheets",
+    "Slack"
+  ],
+  "useCase": "Segment a database of nursing candidates into actionable groups for targeted recruitment. Automatically calculates experience level (New Grad, Intermediate, Experienced, Senior), specialty segments (ICU, ER, Med-Surg, Peds, Other), location preferences, shift preferences, pay tiers (Standard, Premium, Executive), and engagement levels (Hot, Warm, Cold). Alerts recruiters via Slack for hot leads requiring immediate action.",
+  "requirements": [
+    "Google Sheets with 'Candidates' sheet",
+    "Slack workspace and channel",
+    "Candidate data: specialty, years_experience, location, shift preference, desired pay, engagement metrics"
+  ],
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "25-35 minutes",
+  "features": [
+    "Multi-dimensional segmentation (6 criteria)",
+    "Specialty routing (ICU, ER, Med-Surg, Pediatrics, Other)",
+    "Experience level classification (4 tiers)",
+    "Engagement scoring (Hot/Warm/Cold)",
+    "Pay tier assignment (Standard/Premium/Executive)",
+    "Market rate ranges by specialty",
+    "Recruiting priority levels",
+    "Automated hot lead alerts to Slack",
+    "SLA recommendations per segment",
+    "Recommended actions per engagement level"
+  ],
+  "segmentationCriteria": {
+    "specialty": [
+      "ICU/Critical Care",
+      "ER/Emergency",
+      "Med-Surg",
+      "Pediatrics",
+      "Other"
+    ],
+    "experienceLevel": [
+      "New Grad (<2 yrs)",
+      "Intermediate (2-5 yrs)",
+      "Experienced (5-10 yrs)",
+      "Senior (10+ yrs)"
+    ],
+    "engagementLevel": [
+      "Hot (5+ interactions)",
+      "Warm (2-5 interactions)",
+      "Cold (<2 interactions)"
+    ],
+    "payTier": [
+      "Standard (<$35/hr)",
+      "Premium ($35-50/hr)",
+      "Executive ($50+/hr)"
+    ],
+    "location": "State-based",
+    "shiftPreference": "Candidate-specified"
+  },
+  "limitations": [
+    "Requires clean candidate data",
+    "Manual specialty mapping needed",
+    "No machine learning predictions",
+    "Static segmentation rules",
+    "Requires engagement tracking setup"
+  ],
+  "dataSchema": {
+    "googleSheet": {
+      "sheetName": "Candidates",
+      "inputColumns": [
+        "email",
+        "first_name",
+        "last_name",
+        "specialty",
+        "years_experience",
+        "location_state",
+        "shift_preference",
+        "desired_hourly_rate",
+        "email_opens",
+        "clicks",
+        "responses",
+        "phone"
+      ],
+      "outputColumns": [
+        "specialty_segment",
+        "experience_level",
+        "location_segment",
+        "shift_segment",
+        "pay_tier",
+        "engagement_level",
+        "segment_tags",
+        "recruiting_priority",
+        "market_rate_range",
+        "recommended_action",
+        "response_sla",
+        "alert_recruiter"
+      ]
+    }
+  },
+  "pricing": {
+    "n8n": "Free (self-hosted) or $20+/month (cloud)",
+    "googleSheets": "Free",
+    "slack": "Free tier available"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

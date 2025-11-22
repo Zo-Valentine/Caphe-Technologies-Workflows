@@ -1,0 +1,78 @@
+{
+  "name": "Resume Parsing & Profile Enrichment",
+  "description": "AI-powered resume parsing workflow that automatically extracts nursing certifications, specialties, experience, skills, and education from uploaded resumes using OpenAI, then enriches candidate profiles in your database",
+  "category": "healthcare",
+  "subcategory": "Appointments",
+  "difficulty": "intermediate",
+  "tags": [
+    "healthcare",
+    "resume-parsing",
+    "AI",
+    "OpenAI",
+    "candidate-enrichment",
+    "RN",
+    "CNA",
+    "recruitment",
+    "NLP"
+  ],
+  "integrations": [
+    "Webhook",
+    "OpenAI GPT-4",
+    "Google Sheets",
+    "Email (SMTP)",
+    "Code (JavaScript)"
+  ],
+  "useCase": "Healthcare recruiters receive hundreds of nursing resumes and manually extracting certifications, specialties, and experience is time-consuming. This workflow uses AI to automatically parse resumes, extract structured data, calculate profile completeness scores, and enrich candidate records.",
+  "requirements": {
+    "credentials": [
+      "OpenAI API Key (GPT-4 access recommended)",
+      "Google Sheets OAuth2 (read/write access)",
+      "SMTP Email Account"
+    ],
+    "external": [
+      "Google Sheet with 'Candidates' tab including columns: candidate_id, candidate_name, certifications, specialties, years_experience, education, skills, work_history, languages, licenses, parsed_date, enrichment_score, profile_completeness",
+      "Web form or application that can POST resume text to webhook URL"
+    ],
+    "environment": [
+      "GOOGLE_SHEET_ID - Your Google Sheet ID",
+      "RECRUITER_EMAIL - Recruiter's email address",
+      "SHEET_URL - Direct URL to your Google Sheet"
+    ]
+  },
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "25-35 minutes",
+  "features": [
+    "AI-powered resume parsing using GPT-4",
+    "Automatic extraction of nursing certifications (RN, CNA, BSN, etc.)",
+    "Specialty identification (ICU, ER, Med-Surg, etc.)",
+    "Years of experience calculation",
+    "Skills and education extraction",
+    "Profile completeness scoring (0-100)",
+    "Experience level classification (Junior/Mid-Level/Senior)",
+    "Automatic Google Sheets profile enrichment",
+    "Email notifications to recruiters with parsed data"
+  ],
+  "limitations": [
+    "Requires OpenAI API key (costs $0.01-0.03 per resume)",
+    "Resume must be in text format (PDF conversion needed separately)",
+    "AI accuracy depends on resume quality and formatting",
+    "No support for resume file upload (text/URL only)",
+    "Limited to English-language resumes",
+    "No automatic deduplication of candidates"
+  ],
+  "pricing": {
+    "n8n": "Free tier: 20 executions/day, Paid: $20/month unlimited",
+    "openai": "$0.01-0.03 per resume (GPT-4 Turbo pricing)",
+    "googleSheets": "Free with Google account",
+    "smtp": "Free with Gmail or provider",
+    "estimatedCost": "$10-30/month for 1000 resumes"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

@@ -1,0 +1,52 @@
+{
+  "name": "API Fundamentals Tutorial",
+  "description": "Learn the basics of working with APIs in n8n through hands-on examples",
+  "category": "it-development",
+  "subcategory": "code-integration",
+  "difficulty": "beginner",
+  "tags": [
+    "tutorial",
+    "api",
+    "http",
+    "rest",
+    "learning",
+    "fundamentals",
+    "integration"
+  ],
+  "integrations": [
+    "HTTP Request",
+    "Public APIs"
+  ],
+  "useCase": "Master API integration basics in n8n. Learn about HTTP methods, headers, authentication, and data handling through practical examples.",
+  "requirements": [
+    "n8n instance",
+    "Internet connection"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "20 minutes",
+  "features": [
+    "HTTP request examples",
+    "GET, POST, PUT, DELETE methods",
+    "Header configuration",
+    "Response handling",
+    "Error management",
+    "Authentication basics"
+  ],
+  "limitations": [
+    "Tutorial/educational purpose",
+    "Uses public test APIs",
+    "Basic examples only"
+  ],
+  "pricing": {
+    "n8nPlan": "Community (Free)",
+    "externalServices": "None (uses free public APIs)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

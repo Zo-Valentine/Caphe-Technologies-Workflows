@@ -1,0 +1,84 @@
+{
+  "name": "Healthcare Staffing - Follow-up Drip Campaign",
+  "description": "Automated multi-touch email and SMS nurture sequence for passive nursing candidates. Sends strategic follow-ups over 16 days with value-based messaging.",
+  "category": "healthcare",
+  "subcategory": "Patient Notifications",
+  "difficulty": "intermediate",
+  "tags": [
+    "drip-campaign",
+    "email-automation",
+    "sms-marketing",
+    "lead-nurture",
+    "healthcare-staffing",
+    "recruitment",
+    "nurse-recruitment",
+    "follow-up-automation"
+  ],
+  "integrations": [
+    "Google Sheets",
+    "Email (SMTP)",
+    "Twilio SMS",
+    "Schedule Trigger"
+  ],
+  "useCase": "Automatically nurture passive RN/CNA candidates with a 5-touch email sequence over 16 days. Includes SMS follow-ups on days 4 and 12 for phone-opt-in candidates. Each message is strategically crafted (initial contact, reminder, value prop, urgency, final touch) to move candidates through the recruitment funnel.",
+  "requirements": [
+    "Google Sheets with 'Passive_Leads' sheet",
+    "SMTP email account or SendGrid",
+    "Twilio account (for SMS, optional)",
+    "Recruiter contact information",
+    "Candidate data: email, phone, specialty, name, opt-in status"
+  ],
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "30-45 minutes",
+  "features": [
+    "5-stage drip campaign (Days 1, 4, 8, 12, 16)",
+    "Dynamic message personalization",
+    "SMS touchpoints on days 4 and 12",
+    "Automatic follow-up counter tracking",
+    "Phone opt-in checking",
+    "Specialty-specific messaging",
+    "Recruiter information variables",
+    "Daily automated runs",
+    "Prevents over-messaging (max 5 touches)",
+    "3-day gap between messages"
+  ],
+  "limitations": [
+    "Requires manual candidate data entry",
+    "No response tracking/parsing",
+    "SMS requires Twilio account",
+    "No A/B testing built-in",
+    "Fixed message templates"
+  ],
+  "dataSchema": {
+    "googleSheet": {
+      "sheetName": "Passive_Leads",
+      "columns": [
+        "email",
+        "first_name",
+        "phone",
+        "specialty",
+        "pay_range",
+        "last_contact_days",
+        "followup_count",
+        "phone_opt_in",
+        "recruiter_name",
+        "recruiter_email",
+        "recruiter_phone"
+      ]
+    }
+  },
+  "pricing": {
+    "n8n": "Free (self-hosted) or $20+/month (cloud)",
+    "twilio": "$0.0079/SMS (USA)",
+    "email": "Free (Gmail) or $15/month (SendGrid)",
+    "googleSheets": "Free"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

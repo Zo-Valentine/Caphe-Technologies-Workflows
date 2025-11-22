@@ -1,0 +1,56 @@
+{
+  "name": "RAG (Retrieval-Augmented Generation) Starter",
+  "description": "Starter template for building RAG systems that combine document retrieval with AI generation",
+  "category": "data-analytics",
+  "subcategory": "business-intelligence",
+  "difficulty": "advanced",
+  "tags": [
+    "rag",
+    "retrieval",
+    "ai",
+    "vector-search",
+    "embeddings",
+    "llm",
+    "knowledge-base"
+  ],
+  "integrations": [
+    "OpenAI",
+    "Vector Database",
+    "LangChain"
+  ],
+  "useCase": "Build AI systems that answer questions using your own data. Combines document retrieval with LLM generation for accurate, context-aware responses.",
+  "requirements": [
+    "OpenAI API key",
+    "Vector database (Pinecone, Weaviate, Qdrant, etc.)",
+    "Document collection to index",
+    "n8n instance"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "35 minutes",
+  "features": [
+    "Document chunking and embedding",
+    "Vector similarity search",
+    "Context injection into LLM prompts",
+    "Source citation",
+    "Configurable retrieval parameters",
+    "Foundation for custom RAG apps"
+  ],
+  "limitations": [
+    "Requires vector database setup",
+    "Embedding costs for document indexing",
+    "Query costs for retrieval + generation",
+    "Performance depends on document quality"
+  ],
+  "pricing": {
+    "n8nPlan": "Community or higher",
+    "externalServices": "OpenAI (embeddings + completions), Vector DB (varies by provider)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

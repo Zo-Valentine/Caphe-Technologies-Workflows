@@ -1,0 +1,51 @@
+{
+  "name": "Easy AI Starter",
+  "description": "Simple template to get started with AI chat workflows in n8n - perfect for beginners",
+  "category": "general-utilities",
+  "subcategory": "notifications",
+  "difficulty": "beginner",
+  "tags": [
+    "tutorial",
+    "ai",
+    "chat",
+    "starter",
+    "beginner",
+    "template",
+    "learning"
+  ],
+  "integrations": [
+    "OpenAI",
+    "LangChain"
+  ],
+  "useCase": "Learn the basics of building AI chat workflows. This starter template provides the minimal setup needed to create an AI chatbot.",
+  "requirements": [
+    "OpenAI API key",
+    "n8n instance"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "10 minutes",
+  "features": [
+    "Simple chat interface",
+    "Basic AI conversation",
+    "Minimal configuration",
+    "Easy to understand structure",
+    "Starting point for customization"
+  ],
+  "limitations": [
+    "No memory (stateless)",
+    "Basic functionality only",
+    "Educational purpose"
+  ],
+  "pricing": {
+    "n8nPlan": "Community (Free)",
+    "externalServices": "OpenAI (pay-per-use)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

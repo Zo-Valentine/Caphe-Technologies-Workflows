@@ -1,0 +1,57 @@
+{
+  "name": "Knowledge Store Agent (with Google Drive)",
+  "description": "AI agent that answers questions using documents stored in Google Drive as its knowledge base",
+  "category": "content-media",
+  "subcategory": "asset-management",
+  "difficulty": "advanced",
+  "tags": [
+    "knowledge-base",
+    "google-drive",
+    "ai-agent",
+    "rag",
+    "document-search",
+    "qa"
+  ],
+  "integrations": [
+    "Google Drive",
+    "OpenAI",
+    "LangChain",
+    "Vector Database"
+  ],
+  "useCase": "Create a custom AI assistant that answers questions based on your company documents stored in Google Drive. Perfect for internal knowledge bases and documentation.",
+  "requirements": [
+    "Google Drive with documents",
+    "Google Cloud project with Drive API",
+    "OpenAI API key",
+    "Vector database (Pinecone, Weaviate, or similar)",
+    "n8n instance"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "40 minutes",
+  "features": [
+    "Document indexing from Google Drive",
+    "Semantic search capabilities",
+    "Context-aware answers",
+    "Source attribution",
+    "Conversation memory",
+    "Multi-document retrieval"
+  ],
+  "limitations": [
+    "Initial indexing time for large document sets",
+    "OpenAI embedding and completion costs",
+    "Vector database required",
+    "Document updates require re-indexing"
+  ],
+  "pricing": {
+    "n8nPlan": "Community or higher",
+    "externalServices": "OpenAI (embeddings + completions), Vector DB (varies), Google Drive (free)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Email Triage Agent (with Gmail)",
+  "description": "AI-powered agent that automatically categorizes and labels incoming emails in Gmail based on content analysis",
+  "category": "customer-service",
+  "subcategory": "support-workflows",
+  "difficulty": "intermediate",
+  "tags": [
+    "email",
+    "gmail",
+    "ai-agent",
+    "automation",
+    "classification",
+    "customer-support",
+    "triage"
+  ],
+  "integrations": [
+    "Gmail",
+    "OpenAI",
+    "LangChain"
+  ],
+  "useCase": "Automatically organize your Gmail inbox by having an AI agent read incoming emails and apply appropriate labels based on content, sender, and context. Perfect for support teams managing high email volumes.",
+  "requirements": [
+    "Gmail account with API access enabled",
+    "Google Cloud Platform project with Gmail API",
+    "OpenAI API key for AI classification",
+    "n8n instance (self-hosted or cloud)",
+    "Gmail labels created in advance"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "25 minutes",
+  "features": [
+    "Automatic email categorization using AI",
+    "Polls for new unread emails",
+    "Applies Gmail labels based on content analysis",
+    "Analyzes email subject, sender, and body content",
+    "Supports multiple label assignment per email",
+    "Customizable categorization rules via system message"
+  ],
+  "limitations": [
+    "Requires OpenAI API (paid service)",
+    "Gmail API rate limits apply",
+    "Email polling frequency limited to 1 minute minimum",
+    "Labels must be pre-created in Gmail"
+  ],
+  "support": {
+    "documentation": "https://docs.n8n.io",
+    "video": "",
+    "contact": "https://community.n8n.io"
+  },
+  "pricing": {
+    "n8nPlan": "Community (Free) or higher",
+    "externalServices": "OpenAI API (pay-per-use), Gmail (free)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

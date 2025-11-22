@@ -1,0 +1,114 @@
+{
+  "name": "Healthcare Staffing - Lead Routing & Assignment",
+  "description": "Automatically route incoming nursing candidate leads to recruiters by geographic region, then assign to the recruiter with the lowest workload using round-robin logic. Notifies assigned recruiter via email and Slack.",
+  "category": "healthcare",
+  "subcategory": "Compliance",
+  "difficulty": "intermediate",
+  "tags": [
+    "lead-routing",
+    "lead-assignment",
+    "round-robin",
+    "workload-balancing",
+    "healthcare-staffing",
+    "recruitment-automation",
+    "regional-routing"
+  ],
+  "integrations": [
+    "Webhook",
+    "Google Sheets",
+    "Email (SMTP)",
+    "Slack"
+  ],
+  "useCase": "Route new nursing candidate leads to the appropriate regional recruiter team (West Coast, East Coast, Midwest, South), then automatically assign to the recruiter with the lowest current workload. Ensures fair distribution, prevents recruiter burnout, and maintains fast response times. Ideal for staffing agencies with distributed recruiting teams.",
+  "requirements": [
+    "Google Sheets with 'Incoming_Leads' and 'Recruiter_Workload' sheets",
+    "Webhook endpoint for lead capture",
+    "Email account for notifications",
+    "Slack workspace and channel",
+    "Recruiter email addresses by region"
+  ],
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "35-45 minutes",
+  "features": [
+    "Geographic routing by state (4 regions)",
+    "Round-robin assignment by workload",
+    "Real-time workload tracking",
+    "Automatic workload increment",
+    "Email notification to assigned recruiter",
+    "Slack team notification",
+    "Webhook response with assignment details",
+    "Lead ID generation",
+    "Assignment timestamp tracking",
+    "Fallback for unassigned regions"
+  ],
+  "regionalRouting": {
+    "westCoast": "CA, OR, WA, NV, AZ, HI, AK",
+    "eastCoast": "NY, NJ, PA, MA, CT, RI, VT, NH, ME, MD, DE, VA, WV",
+    "midwest": "IL, IN, OH, MI, WI, MN, IA, MO, ND, SD, NE, KS",
+    "south": "TX, FL, GA, NC, SC, TN, AL, MS, LA, AR, OK, KY"
+  },
+  "assignmentLogic": "Lowest workload (active_leads count) within regional recruiter pool. Ties are resolved by order in recruiter list.",
+  "limitations": [
+    "Requires manual recruiter list maintenance",
+    "No specialty-based routing (region only)",
+    "Workload must be manually updated when leads close",
+    "No recruiter availability checking",
+    "Static regional definitions"
+  ],
+  "dataSchema": {
+    "googleSheets": {
+      "incomingLeads": {
+        "sheetName": "Incoming_Leads",
+        "columns": [
+          "lead_id",
+          "first_name",
+          "last_name",
+          "email",
+          "phone",
+          "specialty",
+          "state",
+          "city",
+          "received_at",
+          "region",
+          "assigned_recruiter",
+          "assigned_at"
+        ]
+      },
+      "recruiterWorkload": {
+        "sheetName": "Recruiter_Workload",
+        "columns": [
+          "recruiter_email",
+          "recruiter_name",
+          "region",
+          "active_leads",
+          "last_assignment"
+        ]
+      }
+    },
+    "webhookInput": {
+      "requiredFields": [
+        "first_name",
+        "last_name",
+        "email",
+        "phone",
+        "specialty",
+        "state",
+        "city"
+      ]
+    }
+  },
+  "pricing": {
+    "n8n": "Free (self-hosted) or $20+/month (cloud)",
+    "googleSheets": "Free",
+    "email": "Free (Gmail) or $15/month (SendGrid)",
+    "slack": "Free tier available"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

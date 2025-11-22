@@ -1,0 +1,52 @@
+{
+  "name": "Joke Agent (with HTTP Tool)",
+  "description": "Fun AI agent that fetches and tells jokes using external APIs - great for learning tool usage",
+  "category": "general-utilities",
+  "subcategory": "notifications",
+  "difficulty": "beginner",
+  "tags": [
+    "tutorial",
+    "ai-agent",
+    "http",
+    "api",
+    "tools",
+    "fun",
+    "learning"
+  ],
+  "integrations": [
+    "OpenAI",
+    "LangChain",
+    "HTTP APIs"
+  ],
+  "useCase": "Learn how AI agents can use external tools by building a joke-telling bot that fetches jokes from APIs.",
+  "requirements": [
+    "OpenAI API key",
+    "n8n instance"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "15 minutes",
+  "features": [
+    "AI agent with HTTP tool",
+    "External API integration",
+    "Tool calling demonstration",
+    "Interactive chat interface",
+    "Example of agent architecture"
+  ],
+  "limitations": [
+    "Educational/demo purpose",
+    "Limited to joke API",
+    "Simple agent logic"
+  ],
+  "pricing": {
+    "n8nPlan": "Community (Free)",
+    "externalServices": "OpenAI (pay-per-use), Joke APIs (free)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

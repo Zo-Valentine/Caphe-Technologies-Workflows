@@ -1,0 +1,75 @@
+{
+  "name": "RN/CNA Job Application Lead Capture",
+  "description": "Automated web form submission workflow that captures RN and CNA job applications, stores data in Google Sheets, and sends instant notifications to recruiters via email and Slack",
+  "category": "healthcare",
+  "subcategory": "Appointments",
+  "difficulty": "beginner",
+  "tags": [
+    "healthcare",
+    "staffing",
+    "lead-generation",
+    "RN",
+    "CNA",
+    "recruitment",
+    "form-automation",
+    "webhooks",
+    "notifications"
+  ],
+  "integrations": [
+    "Webhook",
+    "Google Sheets",
+    "Email (SMTP)",
+    "Slack"
+  ],
+  "useCase": "Healthcare staffing agencies need to capture RN and CNA job applications from their website forms and immediately notify recruiters. This workflow automates the entire lead capture process - from form submission to database storage to multi-channel notifications.",
+  "requirements": {
+    "credentials": [
+      "Google Sheets OAuth2 (read/write access)",
+      "SMTP Email Account (for recruiter notifications)",
+      "Slack API Token (for channel notifications)"
+    ],
+    "external": [
+      "Google Sheet with 'Candidates' tab and columns: Name, Email, Phone, Position, License Number, License State, Years Experience, Specialty, Preferred Location, Shift Preference, Application Date, Status",
+      "Slack channel for recruitment notifications",
+      "Web form that POSTs to n8n webhook URL"
+    ],
+    "environment": [
+      "GOOGLE_SHEET_ID - Your Google Sheet ID",
+      "RECRUITER_EMAIL - Recruiter's email address",
+      "SLACK_CHANNEL - Slack channel ID (e.g., #recruiters)",
+      "SHEET_URL - Direct URL to your Google Sheet"
+    ]
+  },
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "20-30 minutes",
+  "features": [
+    "Webhook endpoint for form submissions",
+    "Automatic data extraction from POST body",
+    "Real-time Google Sheets database storage",
+    "HTML-formatted email notifications to recruiters",
+    "Slack channel notifications with candidate details",
+    "Immediate webhook response to applicant",
+    "Timestamp tracking for all applications",
+    "Automatic status assignment (New Lead)"
+  ],
+  "limitations": [
+    "Requires Google Sheets for data storage (not CRM-integrated)",
+    "No automatic email confirmation to applicant",
+    "No duplicate detection (same applicant can submit multiple times)",
+    "No file upload handling (resume attachments)"
+  ],
+  "pricing": {
+    "n8n": "Free tier: 20 executions/day, Paid: $20/month unlimited",
+    "googleSheets": "Free with Google account",
+    "slack": "Free tier available",
+    "smtp": "Varies by provider (Gmail free for basic use)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

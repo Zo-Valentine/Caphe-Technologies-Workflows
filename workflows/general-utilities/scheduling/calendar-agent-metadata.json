@@ -1,0 +1,63 @@
+{
+  "name": "Calendar Agent (with Google Calendar)",
+  "description": "AI-powered chat agent that helps manage your Google Calendar through natural language conversations",
+  "category": "general-utilities",
+  "subcategory": "scheduling",
+  "difficulty": "intermediate",
+  "tags": [
+    "calendar",
+    "google-calendar",
+    "ai-agent",
+    "scheduling",
+    "chat",
+    "automation",
+    "assistant"
+  ],
+  "integrations": [
+    "Google Calendar",
+    "OpenAI",
+    "LangChain",
+    "n8n Chat"
+  ],
+  "useCase": "Interact with your Google Calendar using natural language. Check availability, find events, and manage your schedule through a conversational AI agent.",
+  "requirements": [
+    "Google Calendar with API access",
+    "Google Cloud Platform project with Calendar API enabled",
+    "OpenAI API key",
+    "n8n instance (self-hosted or cloud)",
+    "Web browser to access chat interface"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "20 minutes",
+  "features": [
+    "Natural language calendar queries",
+    "Check availability for specific time ranges",
+    "Search for events by date range",
+    "Interactive chat interface",
+    "Real-time calendar information",
+    "Context-aware responses"
+  ],
+  "limitations": [
+    "Read-only access (checking events and availability)",
+    "Cannot create or modify events",
+    "Requires active OpenAI API subscription",
+    "Chat interface must remain open during conversation"
+  ],
+  "support": {
+    "documentation": "https://docs.n8n.io",
+    "video": "",
+    "contact": "https://community.n8n.io"
+  },
+  "pricing": {
+    "n8nPlan": "Community (Free) or higher",
+    "externalServices": "OpenAI API (pay-per-use), Google Calendar API (free)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

@@ -1,0 +1,168 @@
+{
+  "name": "Healthcare Staffing - Shift Matching & Availability",
+  "description": "Intelligent shift matching system that captures nursing candidate preferences (day/night/PRN, days available, location) and automatically matches them with open facility shifts using a scoring algorithm. Sends instant SMS + email notifications for top matches.",
+  "category": "healthcare",
+  "subcategory": "Appointments",
+  "difficulty": "advanced",
+  "tags": [
+    "shift-matching",
+    "availability-tracking",
+    "healthcare-staffing",
+    "gig-economy",
+    "automated-matching",
+    "sms-alerts",
+    "prn-staffing",
+    "nurse-scheduling"
+  ],
+  "integrations": [
+    "Webhook",
+    "Google Sheets",
+    "Email (SMTP)",
+    "Twilio SMS",
+    "Slack"
+  ],
+  "useCase": "Perfect for 'Uber-for-Nurses' platforms and gig economy healthcare staffing. Captures candidate shift preferences via web form, calculates availability score, matches against open facility shifts using multi-factor algorithm (specialty, shift time, location, days, weekend/night willingness), and instantly notifies candidates via SMS + email when high-quality matches (70%+) are found. Ideal for CNAs, LPNs, and PRN RNs seeking flexible shift work.",
+  "requirements": [
+    "Google Sheets with 'Candidate_Availability', 'Open_Shifts', and 'Shift_Matches' sheets",
+    "Webhook endpoint for intake form",
+    "Twilio account for SMS alerts",
+    "Email account for detailed notifications",
+    "Slack workspace for staffing team alerts",
+    "Facility shift data with location and requirements"
+  ],
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "45-60 minutes",
+  "features": [
+    "Multi-factor matching algorithm",
+    "Availability score calculation (0-100)",
+    "Real-time shift matching",
+    "Instant SMS alerts for top matches",
+    "Detailed email with all matches",
+    "Location-based filtering (zip code proximity)",
+    "Specialty requirement validation",
+    "Shift time preference matching",
+    "Weekend/night shift bonus scoring",
+    "Flexible schedule detection",
+    "Match quality rating (Excellent/Good/Fair)",
+    "Top 5 matches per candidate",
+    "No-match notification with stay-updated message",
+    "Slack team notifications"
+  ],
+  "matchingAlgorithm": {
+    "factors": [
+      "Specialty match (required, +50 points)",
+      "Shift time preference (+30 points)",
+      "Weekend availability (+20 points)",
+      "Night shift willingness (+15 points)",
+      "Flexible schedule (+15 points)",
+      "Day of week match (+10 points)",
+      "Location proximity (+5-25 points)"
+    ],
+    "minimumScore": 70,
+    "qualityRatings": {
+      "excellent": "90-100 points",
+      "good": "80-89 points",
+      "fair": "70-79 points"
+    }
+  },
+  "availabilityScore": {
+    "calculation": "(shifts_per_week × 10) + (flexible ? 20 : 0) + (weekend ? 15 : 0) + (night ? 15 : 0)",
+    "maxScore": 100,
+    "interpretation": "Higher scores = more flexible/available candidates"
+  },
+  "limitations": [
+    "Simplified location matching (zip code difference, not true distance)",
+    "No real-time shift booking (manual confirmation required)",
+    "Static matching rules (no machine learning)",
+    "Requires manual open shift data entry",
+    "No candidate certification validation",
+    "SMS costs per notification"
+  ],
+  "dataSchema": {
+    "googleSheets": {
+      "candidateAvailability": {
+        "sheetName": "Candidate_Availability",
+        "columns": [
+          "candidate_id",
+          "name",
+          "email",
+          "phone",
+          "specialty",
+          "zip_code",
+          "preferred_shift",
+          "shifts_per_week",
+          "days_available",
+          "weekend_availability",
+          "night_shift_willing",
+          "flexible_schedule",
+          "travel_distance_miles",
+          "availability_score",
+          "intake_at"
+        ]
+      },
+      "openShifts": {
+        "sheetName": "Open_Shifts",
+        "columns": [
+          "shift_id",
+          "facility_name",
+          "facility_address",
+          "facility_zip",
+          "required_specialty",
+          "shift_date",
+          "day_of_week",
+          "shift_time",
+          "shift_duration",
+          "hourly_rate"
+        ]
+      },
+      "shiftMatches": {
+        "sheetName": "Shift_Matches",
+        "columns": [
+          "candidate_id",
+          "candidate_name",
+          "shift_id",
+          "facility_name",
+          "shift_date",
+          "shift_time",
+          "match_score",
+          "match_quality",
+          "match_reasons",
+          "matched_at",
+          "status"
+        ]
+      }
+    },
+    "webhookInput": {
+      "requiredFields": [
+        "first_name",
+        "last_name",
+        "email",
+        "phone",
+        "specialty",
+        "zip_code",
+        "preferred_shift",
+        "shifts_per_week",
+        "days_available",
+        "weekend_availability",
+        "night_shift_willing",
+        "flexible_schedule",
+        "travel_distance_miles"
+      ]
+    }
+  },
+  "pricing": {
+    "n8n": "Free (self-hosted) or $20+/month (cloud)",
+    "googleSheets": "Free",
+    "twilio": "$0.0079/SMS (USA)",
+    "email": "Free (Gmail) or $15/month (SendGrid)",
+    "slack": "Free tier available"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

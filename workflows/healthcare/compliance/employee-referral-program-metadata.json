@@ -1,0 +1,148 @@
+{
+  "name": "Healthcare Staffing - Employee Referral Program",
+  "description": "Automated employee referral tracking system. Validates employee referrers, calculates tiered bonuses by specialty, tracks referral status, and notifies all parties. Includes 90-day employment requirement for bonus eligibility.",
+  "category": "healthcare",
+  "subcategory": "Compliance",
+  "difficulty": "intermediate",
+  "tags": [
+    "employee-referrals",
+    "referral-bonus",
+    "recruitment-automation",
+    "healthcare-staffing",
+    "bonus-calculation",
+    "employee-validation",
+    "referral-tracking"
+  ],
+  "integrations": [
+    "Webhook",
+    "Google Sheets",
+    "Email (SMTP)",
+    "Slack"
+  ],
+  "useCase": "Streamline employee referral program for nursing recruitment. Automatically validates that referring employee is active and eligible for bonuses (90+ days employed), calculates specialty-based bonus tiers ($1,000-$2,000), sends confirmation emails to both referrer and candidate, and alerts HR team. Tracks referral lifecycle from submission through hiring and bonus payout.",
+  "requirements": [
+    "Google Sheets with 'Employee_Referrals' and 'Employees' sheets",
+    "Webhook endpoint for referral submissions",
+    "Email accounts for HR and recruiting",
+    "Slack workspace with HR channel",
+    "Employee database with hire dates and status"
+  ],
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "40-50 minutes",
+  "features": [
+    "Automatic referral ID generation (REF-YYYYMMDD-XXXXXX)",
+    "Employee validation against active database",
+    "90-day employment eligibility check",
+    "3-tier bonus calculation by specialty",
+    "Duplicate referral prevention",
+    "Confirmation email to referring employee",
+    "Welcome email to referred candidate",
+    "Slack notification to HR team",
+    "Referral status tracking",
+    "Bonus payout schedule (50% at 90 days, 50% at 180 days)"
+  ],
+  "bonusTiers": {
+    "tier1": {
+      "amount": 2000,
+      "specialties": "ICU, ER, Critical Care, CVICU, SICU, MICU, Trauma",
+      "description": "High-demand critical care specialties"
+    },
+    "tier2": {
+      "amount": 1500,
+      "specialties": "Med-Surg, Telemetry, Step-Down, Oncology, Cardiology",
+      "description": "Mid-demand acute care specialties"
+    },
+    "tier3": {
+      "amount": 1000,
+      "specialties": "All other nursing specialties",
+      "description": "General nursing positions"
+    }
+  },
+  "eligibilityRules": {
+    "referrer": [
+      "Must be active employee",
+      "Must have been employed for 90+ days",
+      "Cannot refer for positions in own department (optional rule)"
+    ],
+    "candidate": [
+      "Cannot be current or former employee",
+      "Must complete 90 days for first bonus payout",
+      "Must complete 180 days for second bonus payout"
+    ]
+  },
+  "limitations": [
+    "Requires manual bonus payout tracking",
+    "No duplicate candidate checking",
+    "No automated payout processing",
+    "Bonus amounts are static (not configurable)",
+    "No referral limits per employee"
+  ],
+  "dataSchema": {
+    "googleSheets": {
+      "employeeReferrals": {
+        "sheetName": "Employee_Referrals",
+        "columns": [
+          "referral_id",
+          "referrer_employee_id",
+          "referrer_name",
+          "referrer_email",
+          "referrer_department",
+          "referrer_hire_date",
+          "candidate_name",
+          "candidate_email",
+          "candidate_phone",
+          "candidate_specialty",
+          "relationship",
+          "submitted_at",
+          "status",
+          "validation_status",
+          "bonus_eligible",
+          "bonus_tier",
+          "potential_bonus",
+          "candidate_hired_date",
+          "bonus_payout_90_days",
+          "bonus_payout_180_days"
+        ]
+      },
+      "employees": {
+        "sheetName": "Employees",
+        "columns": [
+          "employee_id",
+          "employee_name",
+          "email",
+          "department",
+          "hire_date",
+          "status"
+        ]
+      }
+    },
+    "webhookInput": {
+      "requiredFields": [
+        "referrer_employee_id",
+        "referrer_name",
+        "referrer_email",
+        "candidate_first_name",
+        "candidate_last_name",
+        "candidate_email",
+        "candidate_phone",
+        "candidate_specialty",
+        "relationship"
+      ]
+    }
+  },
+  "pricing": {
+    "n8n": "Free (self-hosted) or $20+/month (cloud)",
+    "googleSheets": "Free",
+    "email": "Free (Gmail) or $15/month (SendGrid)",
+    "slack": "Free tier available",
+    "referralBonuses": "$1,000-$2,000 per successful hire (paid by company)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

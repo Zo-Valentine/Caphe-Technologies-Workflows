@@ -1,0 +1,147 @@
+{
+  "name": "Candidate Follow-up Drip Campaign",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "daysInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "schedule",
+      "name": "Daily Check - Passive Leads",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "sheetId": "={{ $env.GOOGLE_SHEET_ID }}",
+        "range": "Candidates!A:Z",
+        "options": {
+          "headerRow": 1
+        }
+      },
+      "id": "get-leads",
+      "name": "Get All Candidates",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "Passive",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "leftValue": "={{ $json.last_contact_date }}",
+              "rightValue": "={{ $now.minus({days: 7}).toISO() }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "filter-passive",
+      "name": "Filter Passive Leads (7+ Days)",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "fromEmail": "={{ $env.RECRUITER_EMAIL }}",
+        "toEmail": "={{ $json.email }}",
+        "subject": "=New Healthcare Opportunities - Day {{ $json.followup_day }}",
+        "emailType": "html",
+        "message": "=<html><body style='font-family: Arial;'><h2>Hi {{ $json.applicant_name }},</h2><p>We have new <strong>{{ $json.position }}</strong> positions available that match your profile.</p><h3>What's New:</h3><ul><li>Competitive pay rates</li><li>Flexible scheduling options</li><li>Sign-on bonuses available</li></ul><p>Are you still interested in {{ $json.position }} opportunities?</p><p><a href='{{ $env.APPLICATION_URL }}?ref={{ $json.candidate_id }}' style='background: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px;'>View Open Positions</a></p><p>Best regards,<br>Healthcare Staffing Team</p></body></html>",
+        "options": {}
+      },
+      "id": "send-email",
+      "name": "Send Follow-up Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "sheetId": "={{ $env.GOOGLE_SHEET_ID }}",
+        "range": "=Candidates!A{{ $json.row_number }}:Z{{ $json.row_number }}",
+        "options": {
+          "valueInputMode": "USER_ENTERED"
+        }
+      },
+      "id": "update-contact-date",
+      "name": "Update Last Contact Date",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Daily Check - Passive Leads": {
+      "main": [
+        [
+          {
+            "node": "Get All Candidates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Candidates": {
+      "main": [
+        [
+          {
+            "node": "Filter Passive Leads (7+ Days)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Passive Leads (7+ Days)": {
+      "main": [
+        [
+          {
+            "node": "Send Follow-up Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Follow-up Email": {
+      "main": [
+        [
+          {
+            "node": "Update Last Contact Date",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "updatedAt": "2025-11-19T00:00:00.000Z"
+}

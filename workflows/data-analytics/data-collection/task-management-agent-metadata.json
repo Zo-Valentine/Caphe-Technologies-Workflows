@@ -1,0 +1,54 @@
+{
+  "name": "Task Management Agent (with Google Sheets)",
+  "description": "AI chatbot that manages tasks in Google Sheets through natural language conversations",
+  "category": "data-analytics",
+  "subcategory": "data-collection",
+  "difficulty": "intermediate",
+  "tags": [
+    "tasks",
+    "google-sheets",
+    "ai-agent",
+    "chat",
+    "productivity",
+    "project-management"
+  ],
+  "integrations": [
+    "Google Sheets",
+    "OpenAI",
+    "LangChain"
+  ],
+  "useCase": "Manage your task list using natural language. Add, update, search, and organize tasks in Google Sheets without opening the spreadsheet.",
+  "requirements": [
+    "Google Sheets with task tracking template",
+    "Google Cloud project with Sheets API enabled",
+    "OpenAI API key",
+    "n8n instance"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "25 minutes",
+  "features": [
+    "Natural language task creation",
+    "Task search and retrieval",
+    "Status updates via chat",
+    "Google Sheets integration",
+    "Conversation memory",
+    "Multi-tool AI agent"
+  ],
+  "limitations": [
+    "Requires specific Google Sheets structure",
+    "OpenAI API costs apply",
+    "Chat interface must remain open"
+  ],
+  "pricing": {
+    "n8nPlan": "Community or higher",
+    "externalServices": "OpenAI (pay-per-use), Google Sheets (free)"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

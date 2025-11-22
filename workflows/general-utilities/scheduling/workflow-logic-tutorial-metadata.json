@@ -1,0 +1,51 @@
+{
+  "name": "Workflow Logic Tutorial",
+  "description": "Learn n8n workflow logic including conditional branching, loops, and data transformation",
+  "category": "general-utilities",
+  "subcategory": "scheduling",
+  "difficulty": "beginner",
+  "tags": [
+    "tutorial",
+    "workflow",
+    "logic",
+    "branching",
+    "conditions",
+    "learning",
+    "fundamentals"
+  ],
+  "integrations": [
+    "n8n Core Nodes"
+  ],
+  "useCase": "Master n8n's core workflow concepts including IF nodes, Switch nodes, loops, and data manipulation. Essential tutorial for building complex automations.",
+  "requirements": [
+    "n8n instance",
+    "Basic understanding of workflows"
+  ],
+  "version": "1.0.0",
+  "author": "n8n Team",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "25 minutes",
+  "features": [
+    "Conditional logic examples",
+    "IF and Switch node usage",
+    "Loop demonstrations",
+    "Data transformation techniques",
+    "Best practices for workflow design",
+    "Error handling patterns"
+  ],
+  "limitations": [
+    "Educational purpose",
+    "No external integrations",
+    "Demo data only"
+  ],
+  "pricing": {
+    "n8nPlan": "Community (Free)",
+    "externalServices": "None"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

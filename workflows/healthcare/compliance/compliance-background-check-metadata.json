@@ -1,0 +1,198 @@
+{
+  "name": "Healthcare Staffing - Compliance & Background Check",
+  "description": "Automated compliance and background check workflow integrating with Checkr API. Initiates background checks, tracks 7 required healthcare compliance documents (license, BLS, COVID, TB, immunizations, physical, drug screen), sends email/SMS reminders, and provides status tracking with expiry alerts.",
+  "category": "healthcare",
+  "subcategory": "Compliance",
+  "difficulty": "advanced",
+  "tags": [
+    "background-check",
+    "compliance-tracking",
+    "healthcare-compliance",
+    "document-management",
+    "checkr-integration",
+    "hipaa-compliance",
+    "onboarding-automation",
+    "credential-verification"
+  ],
+  "integrations": [
+    "Webhook",
+    "Checkr API",
+    "Google Sheets",
+    "Email (SMTP)",
+    "Twilio SMS",
+    "Slack"
+  ],
+  "useCase": "Streamline healthcare worker onboarding by automating background checks and compliance document collection. Initiates Checkr background check, tracks 7 essential healthcare documents (nursing license, BLS, COVID vaccination, TB test, immunizations, physical exam, drug screen), sends automated reminders, monitors expiry dates, and alerts compliance team. Essential for staffing agencies, hospitals, and healthcare facilities ensuring regulatory compliance and patient safety.",
+  "requirements": [
+    "Checkr API account and credentials",
+    "Google Sheets with 'Compliance_Checks' and 'Required_Documents' sheets",
+    "Webhook endpoint for check initiation",
+    "Email account for compliance notifications",
+    "Twilio account for SMS reminders",
+    "Slack workspace for compliance team alerts",
+    "Candidate information (name, DOB, SSN, email, phone)"
+  ],
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "50-60 minutes",
+  "features": [
+    "Checkr API integration for background checks",
+    "Automatic compliance check ID generation",
+    "7-document tracking system",
+    "48-hour document submission deadline",
+    "Email with detailed document requirements",
+    "SMS reminder for urgency",
+    "Individual document status tracking",
+    "Expiry date monitoring",
+    "Automatic reminder scheduling",
+    "Slack team notifications",
+    "Background check status polling",
+    "Compliance dashboard data",
+    "HIPAA-compliant data handling",
+    "Audit trail logging"
+  ],
+  "requiredDocuments": [
+    {
+      "name": "License/Certification",
+      "description": "Valid RN/LPN/CNA license (current and unexpired)",
+      "verification": "State board verification",
+      "expiryTracking": true
+    },
+    {
+      "name": "BLS Certification",
+      "description": "American Heart Association or Red Cross BLS",
+      "verification": "Certificate validation",
+      "expiryTracking": true
+    },
+    {
+      "name": "COVID-19 Vaccination",
+      "description": "Vaccination card or exemption documentation",
+      "verification": "Card/exemption review",
+      "expiryTracking": false
+    },
+    {
+      "name": "TB Test Results",
+      "description": "Within last 12 months or chest X-ray",
+      "verification": "Medical review",
+      "expiryTracking": true
+    },
+    {
+      "name": "Immunization Records",
+      "description": "MMR, Varicella, Hepatitis B, Tdap",
+      "verification": "Medical records review",
+      "expiryTracking": false
+    },
+    {
+      "name": "Physical Exam",
+      "description": "Completed within last 12 months",
+      "verification": "Physician signature",
+      "expiryTracking": true
+    },
+    {
+      "name": "Drug Screen",
+      "description": "Scheduled separately (10-panel)",
+      "verification": "Lab results",
+      "expiryTracking": false
+    }
+  ],
+  "checkrIntegration": {
+    "endpoint": "https://api.checkr.com/v1",
+    "package": "tasker_pro",
+    "features": [
+      "Criminal records check (county, state, federal)",
+      "Sex offender registry search",
+      "SSN trace",
+      "Consider/Individualized assessment"
+    ],
+    "estimatedTime": "3-5 business days",
+    "cost": "$25-35 per check"
+  },
+  "timeline": {
+    "backgroundCheck": "3-5 business days",
+    "documentReview": "24-48 hours after upload",
+    "totalCompliance": "7 days (if all documents submitted promptly)",
+    "reminderSchedule": "Every 24 hours until documents received"
+  },
+  "limitations": [
+    "Requires Checkr API subscription",
+    "Manual document upload by candidate",
+    "No automated document validation",
+    "Expiry reminders require separate scheduled workflow",
+    "Drug screen must be scheduled externally",
+    "State-specific compliance variations not automated"
+  ],
+  "dataSchema": {
+    "googleSheets": {
+      "complianceChecks": {
+        "sheetName": "Compliance_Checks",
+        "columns": [
+          "compliance_check_id",
+          "candidate_id",
+          "candidate_name",
+          "candidate_email",
+          "ssn_last4",
+          "dob",
+          "state",
+          "position",
+          "initiated_at",
+          "overall_status",
+          "checkr_candidate_id",
+          "checkr_report_id",
+          "background_check_status",
+          "estimated_completion",
+          "documents_submitted",
+          "documents_approved",
+          "final_clearance_date"
+        ]
+      },
+      "requiredDocuments": {
+        "sheetName": "Required_Documents",
+        "columns": [
+          "compliance_check_id",
+          "candidate_id",
+          "document_type",
+          "required",
+          "status",
+          "requested_at",
+          "due_date",
+          "uploaded_at",
+          "approved_at",
+          "expiry_date",
+          "reviewer",
+          "notes"
+        ]
+      }
+    },
+    "webhookInput": {
+      "requiredFields": [
+        "candidate_id",
+        "first_name",
+        "last_name",
+        "email",
+        "phone",
+        "ssn",
+        "ssn_last4",
+        "date_of_birth",
+        "state",
+        "zip_code",
+        "position"
+      ]
+    }
+  },
+  "pricing": {
+    "n8n": "Free (self-hosted) or $20+/month (cloud)",
+    "checkr": "$25-35 per background check",
+    "googleSheets": "Free",
+    "twilio": "$0.0079/SMS (USA)",
+    "email": "Free (Gmail) or $15/month (SendGrid)",
+    "slack": "Free tier available",
+    "totalPerCandidate": "$25-40"
+  },
+  "estimatedTime": "15-30 minutes",
+  "prerequisites": [
+    "n8n account",
+    "Basic workflow knowledge"
+  ],
+  "featured": false
+}

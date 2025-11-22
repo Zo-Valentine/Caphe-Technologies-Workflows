@@ -1,0 +1,552 @@
+{
+  "name": "Healthcare Staffing - Follow-up Drip Campaign",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily Check",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "sheetId": "={{ $env.GOOGLE_SHEET_ID }}",
+        "range": "Passive_Leads!A:H",
+        "options": {}
+      },
+      "id": "get-passive-leads",
+      "name": "Get Passive Leads",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false
+          },
+          "conditions": [
+            {
+              "id": "needs-followup",
+              "leftValue": "={{ $json.last_contact_days }}",
+              "rightValue": "3",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            },
+            {
+              "id": "not-contacted",
+              "leftValue": "={{ $json.followup_count }}",
+              "rightValue": "5",
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "filter-due-followups",
+      "name": "Filter Due for Follow-up",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "followup-number",
+              "name": "followup_stage",
+              "value": "={{ $json.followup_count + 1 }}",
+              "type": "number"
+            },
+            {
+              "id": "message-template",
+              "name": "message_type",
+              "value": "={{ $json.followup_count === 0 ? 'initial' : ($json.followup_count === 1 ? 'reminder' : ($json.followup_count === 2 ? 'value' : ($json.followup_count === 3 ? 'urgency' : 'final'))) }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "determine-followup-stage",
+      "name": "Determine Follow-up Stage",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false
+          },
+          "conditions": [
+            {
+              "id": "initial-contact",
+              "leftValue": "={{ $json.message_type }}",
+              "rightValue": "initial",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ]
+        }
+      },
+      "id": "route-by-stage",
+      "name": "Route by Stage",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "subject",
+              "name": "email_subject",
+              "value": "Great Opportunities for {{ $json.specialty }} Nurses",
+              "type": "string"
+            },
+            {
+              "id": "body",
+              "name": "email_body",
+              "value": "Hi {{ $json.first_name }},\n\nI hope this message finds you well! I wanted to reach out because we have several exciting {{ $json.specialty }} nursing positions that match your experience.\n\nWe're currently hiring for:\n- Premium facility locations\n- Competitive pay (${{ $json.pay_range }}/hour)\n- Flexible scheduling options\n- Sign-on bonuses up to $5,000\n\nWould you be interested in learning more? I'd love to discuss how these opportunities align with your career goals.\n\nBest regards,\n{{ $json.recruiter_name }}\n{{ $json.recruiter_phone }}\n{{ $json.recruiter_email }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "initial-message",
+      "name": "Day 1: Initial Contact",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "subject",
+              "name": "email_subject",
+              "value": "Quick Follow-up - {{ $json.specialty }} Nursing Positions",
+              "type": "string"
+            },
+            {
+              "id": "body",
+              "name": "email_body",
+              "value": "Hi {{ $json.first_name }},\n\nI wanted to follow up on my previous message about {{ $json.specialty }} nursing opportunities.\n\nI understand you may be busy, but I wanted to make sure you saw these positions. Many of them are filling quickly.\n\nIf you have 5 minutes this week, I'd be happy to:\n✓ Answer any questions\n✓ Share detailed job descriptions\n✓ Discuss your preferences and availability\n\nLet me know what works best for you!\n\nBest,\n{{ $json.recruiter_name }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "reminder-message",
+      "name": "Day 4: Gentle Reminder",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "subject",
+              "name": "email_subject",
+              "value": "Why Top Nurses Choose Our Facilities",
+              "type": "string"
+            },
+            {
+              "id": "body",
+              "name": "email_body",
+              "value": "Hi {{ $json.first_name }},\n\nI wanted to share what sets our healthcare facilities apart:\n\n🏥 State-of-the-art equipment\n👥 Supportive nursing culture\n💰 Above-market compensation\n📚 Continuing education support\n⭐ Career advancement opportunities\n\nOur {{ $json.specialty }} nurses consistently rate us 4.8/5 stars.\n\nWould you like to hear from some of them directly? I can connect you with current staff in your specialty.\n\nLooking forward to connecting,\n{{ $json.recruiter_name }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "value-message",
+      "name": "Day 8: Value Proposition",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1340, 400]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "subject",
+              "name": "email_subject",
+              "value": "Last Chance: {{ $json.specialty }} Positions Closing Soon",
+              "type": "string"
+            },
+            {
+              "id": "body",
+              "name": "email_body",
+              "value": "Hi {{ $json.first_name }},\n\nI wanted to give you a quick heads up - several of the {{ $json.specialty }} positions I mentioned are expected to close within the next week.\n\nIf you're at all interested, now would be a great time to explore these opportunities.\n\nI'm here if you'd like to chat!\n\nBest,\n{{ $json.recruiter_name }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "urgency-message",
+      "name": "Day 12: Urgency",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1340, 500]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "subject",
+              "name": "email_subject",
+              "value": "Checking In One Last Time",
+              "type": "string"
+            },
+            {
+              "id": "body",
+              "name": "email_body",
+              "value": "Hi {{ $json.first_name }},\n\nI'll keep this brief - I wanted to reach out one final time about nursing opportunities.\n\nIf now isn't the right time, I completely understand. I'll mark you as 'not currently looking' in our system.\n\nIf your situation changes in the future, please don't hesitate to reach out. I'm always happy to help!\n\nWishing you all the best,\n{{ $json.recruiter_name }}\n\nP.S. If you'd like to stay on our mailing list for future opportunities, just reply with 'Keep me updated'",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "final-message",
+      "name": "Day 16: Final Touch",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1340, 600]
+    },
+    {
+      "parameters": {
+        "fromEmail": "={{ $env.RECRUITER_EMAIL }}",
+        "toEmail": "={{ $json.email }}",
+        "subject": "={{ $json.email_subject }}",
+        "message": "={{ $json.email_body }}",
+        "options": {}
+      },
+      "id": "send-email",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [1560, 350]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false
+          },
+          "conditions": [
+            {
+              "id": "has-phone",
+              "leftValue": "={{ $json.phone_opt_in }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "sms-stage",
+              "leftValue": "={{ $json.followup_stage }}",
+              "rightValue": "2,4",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "check-sms-eligible",
+      "name": "Check SMS Eligible",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1780, 350]
+    },
+    {
+      "parameters": {
+        "authentication": "generic",
+        "genericAuthType": "httpHeaderAuth",
+        "requestMethod": "POST",
+        "url": "https://api.twilio.com/2010-04-01/Accounts/={{ $env.TWILIO_ACCOUNT_SID }}/Messages.json",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "From",
+              "value": "={{ $env.TWILIO_PHONE }}"
+            },
+            {
+              "name": "To",
+              "value": "={{ $json.phone }}"
+            },
+            {
+              "name": "Body",
+              "value": "Hi {{ $json.first_name }}, it's {{ $json.recruiter_name }}. Quick question about {{ $json.specialty }} positions - any interest? Reply YES for details!"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-sms",
+      "name": "Send SMS Follow-up",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [2000, 250]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": "={{ $env.GOOGLE_SHEET_ID }}",
+        "sheetName": "Passive_Leads",
+        "dataMode": "autoMapInputData",
+        "options": {
+          "lookupColumn": "email",
+          "lookupValue": "={{ $json.email }}"
+        }
+      },
+      "id": "update-followup-count",
+      "name": "Update Follow-up Count",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.2,
+      "position": [2000, 450]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "last-contact",
+              "name": "last_contact_date",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "followup-increment",
+              "name": "followup_count",
+              "value": "={{ $json.followup_stage }}",
+              "type": "number"
+            },
+            {
+              "id": "contact-method",
+              "name": "last_contact_method",
+              "value": "email",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "prepare-update",
+      "name": "Prepare Update Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [1780, 550]
+    }
+  ],
+  "connections": {
+    "Daily Check": {
+      "main": [
+        [
+          {
+            "node": "Get Passive Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Passive Leads": {
+      "main": [
+        [
+          {
+            "node": "Filter Due for Follow-up",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Due for Follow-up": {
+      "main": [
+        [
+          {
+            "node": "Determine Follow-up Stage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Determine Follow-up Stage": {
+      "main": [
+        [
+          {
+            "node": "Route by Stage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Stage": {
+      "main": [
+        [
+          {
+            "node": "Day 1: Initial Contact",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Day 4: Gentle Reminder",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Day 8: Value Proposition",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Day 12: Urgency",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Day 16: Final Touch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Day 1: Initial Contact": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Day 4: Gentle Reminder": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Day 8: Value Proposition": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Day 12: Urgency": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Day 16: Final Touch": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Check SMS Eligible",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prepare Update Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check SMS Eligible": {
+      "main": [
+        [
+          {
+            "node": "Send SMS Follow-up",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Update Data": {
+      "main": [
+        [
+          {
+            "node": "Update Follow-up Count",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {}
+}

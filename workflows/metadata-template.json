@@ -1,0 +1,45 @@
+{
+  "name": "Workflow Name",
+  "description": "Clear, concise description of what this workflow does and the problem it solves",
+  "category": "category-name",
+  "subcategory": "subcategory-name",
+  "difficulty": "beginner",
+  "tags": [
+    "tag1",
+    "tag2",
+    "tag3"
+  ],
+  "integrations": [
+    "Service 1",
+    "Service 2",
+    "Service 3"
+  ],
+  "useCase": "Detailed explanation of the real-world use case for this workflow",
+  "requirements": [
+    "Requirement 1 (e.g., API key for Service X)",
+    "Requirement 2 (e.g., Paid account for Service Y)",
+    "Requirement 3 (e.g., Webhook URL configured)"
+  ],
+  "version": "1.0.0",
+  "author": "Caphe Workflows",
+  "lastUpdated": "2025-11-19",
+  "estimatedSetupTime": "15 minutes",
+  "features": [
+    "Feature 1",
+    "Feature 2",
+    "Feature 3"
+  ],
+  "limitations": [
+    "Limitation 1 (if any)",
+    "Limitation 2 (if any)"
+  ],
+  "support": {
+    "documentation": "URL to detailed documentation",
+    "video": "URL to video tutorial (if available)",
+    "contact": "support@example.com"
+  },
+  "pricing": {
+    "n8nPlan": "Community/Pro/Enterprise",
+    "externalServices": "List of paid services required"
+  }
+}
