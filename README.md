@@ -4,7 +4,7 @@
 
 Caphè Technologies Workflows is a comprehensive workflow automation ecosystem built on n8n, featuring production-ready templates, a powerful API server, and intuitive frontend interfaces for healthcare staffing and enterprise automation needs.
 
-![Project Banner](./assets/n8n-screenshot.png)
+![Caphè Technologies Workflows Dashboard](./assets/caphe-workflows-screenshot.png)
 
 ## 🚀 Overview
 
@@ -212,6 +212,6 @@ Built on the powerful [n8n](https://n8n.io) workflow automation platform. Specia
 
 ---
 
-**Last Updated**: November 22, 2025  
-**Version**: 1.0.0  
+**Last Updated**: November 22, 2025
+**Version**: 1.0.0
 **Repository**: [Caphè-Technologies-Workflows](https://github.com/Zo-Valentine/Caph-Technologies-Workflows)
