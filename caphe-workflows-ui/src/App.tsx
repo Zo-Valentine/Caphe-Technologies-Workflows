@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import capheLogo from './assets/caphe-logo.png'
 import './App.css'
 
 function App() {
@@ -9,24 +8,36 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://caphetechnologies.com" target="_blank">
+          <img src={capheLogo} className="logo caphe" alt="Caphè Technologies logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>☕ Caphè Technologies Workflows</h1>
+      <p className="tagline">Healthcare Workflow Automation Platform</p>
       <div className="card">
+        <div className="stats">
+          <div className="stat-item">
+            <span className="stat-number">2,080+</span>
+            <span className="stat-label">Workflows</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">238</span>
+            <span className="stat-label">Active</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">400+</span>
+            <span className="stat-label">Integrations</span>
+          </div>
+        </div>
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          Workflows Executed: {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+        <p className="description">
+          Empowering healthcare organizations with intelligent automation
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Built with excellence for healthcare professionals
       </p>
     </>
   )
