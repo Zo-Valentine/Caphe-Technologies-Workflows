@@ -189,9 +189,19 @@ We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md)
 
 ## 📝 License
 
-This project builds upon n8n, which is [fair-code](https://faircode.io) distributed under the [Sustainable Use License](./LICENSE.md).
+This project uses a dual-license structure:
 
-Caphè Technologies Workflows additions and customizations are proprietary to Caphè Technologies.
+- **n8n Platform**: [fair-code](https://faircode.io) distributed under the [Sustainable Use License](./LICENSE.md) and [n8n Enterprise License](./LICENSE_EE.md)
+- **Caphè Technologies Components**: Proprietary license - see [LICENSE_CAPHE.md](./LICENSE_CAPHE.md)
+
+### License Summary
+
+- ✅ **Free for personal and internal business use**
+- ✅ **Evaluate and test without restrictions**
+- 💼 **Commercial use requires a Caphè Technologies Commercial License**
+- 🏥 **Healthcare enterprises need a Healthcare Enterprise License**
+
+For commercial licensing inquiries: licensing@caphetechnologies.com
 
 ## 🔗 Resources
 
