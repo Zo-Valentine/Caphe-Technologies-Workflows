@@ -1,14 +1,19 @@
-# Contributing to n8n
+# Contributing to Caphè Technologies Workflows
 
-Great that you are here and you want to contribute to n8n
+☕ **Welcome!** We're excited that you're interested in contributing to Caphè Technologies Workflows. This platform powers workflow automation for healthcare organizations, and your contributions help improve efficiency, compliance, and patient care delivery.
 
 ## Contents
 
-- [Contributing to n8n](#contributing-to-n8n)
+- [Contributing to Caphè Technologies Workflows](#contributing-to-caphè-technologies-workflows)
 	- [Contents](#contents)
-	- [Code of conduct](#code-of-conduct)
-	- [Directory structure](#directory-structure)
-	- [Development setup](#development-setup)
+	- [Code of Conduct](#code-of-conduct)
+	- [Our Values](#our-values)
+	- [Healthcare Considerations](#healthcare-considerations)
+	- [Ways to Contribute](#ways-to-contribute)
+	- [Workflow Contributions](#workflow-contributions)
+	- [Code Contributions](#code-contributions)
+	- [Directory Structure](#directory-structure)
+	- [Development Setup](#development-setup)
 		- [Dev Container](#dev-container)
 		- [Requirements](#requirements)
 			- [Node.js](#nodejs)
@@ -16,50 +21,159 @@ Great that you are here and you want to contribute to n8n
 				- [pnpm workspaces](#pnpm-workspaces)
 			- [corepack](#corepack)
 			- [Build tools](#build-tools)
-		- [Actual n8n setup](#actual-n8n-setup)
+		- [Actual Setup](#actual-setup)
 		- [Start](#start)
-	- [Development cycle](#development-cycle)
+	- [Development Cycle](#development-cycle)
 		- [Community PR Guidelines](#community-pr-guidelines)
 			- [**1. Change Request/Comment**](#1-change-requestcomment)
 			- [**2. General Requirements**](#2-general-requirements)
 			- [**3. PR Specific Requirements**](#3-pr-specific-requirements)
 			- [**4. Workflow Summary for Non-Compliant PRs**](#4-workflow-summary-for-non-compliant-prs)
-		- [Test suite](#test-suite)
-			- [Unit tests](#unit-tests)
+		- [Test Suite](#test-suite)
+			- [Unit Tests](#unit-tests)
 			- [Code Coverage](#code-coverage)
-			- [E2E tests](#e2e-tests)
-	- [Releasing](#releasing)
-	- [Create custom nodes](#create-custom-nodes)
-	- [Extend documentation](#extend-documentation)
-	- [Contribute workflow templates](#contribute-workflow-templates)
+			- [E2E Tests](#e2e-tests)
+	- [Create Custom Nodes](#create-custom-nodes)
+	- [Documentation](#documentation)
 	- [Contributor License Agreement](#contributor-license-agreement)
+	- [Recognition](#recognition)
+
+## Code of Conduct
+
+This project and everyone participating in it are governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to conduct@caphetechnologies.com.
+
+We are committed to creating a welcoming, inclusive, and professional environment for all contributors.
+
+## Our Values
+
+At Caphè Technologies, we operate with these core values:
+
+- ☕ **Excellence**: We deliver high-quality solutions with attention to detail
+- 🤝 **Collaboration**: We work together to solve complex problems
+- ❤️ **Empathy**: We care about the people our technology serves
+- 🎯 **Professionalism**: We maintain the highest standards in all our work
+- ⭐ **Innovation**: We embrace new ideas and continuous improvement
+
+## Healthcare Considerations
+
+When contributing to Caphè Technologies Workflows, please keep in mind:
+
+- **HIPAA Awareness**: Be mindful of Protected Health Information (PHI) in examples and test data
+- **Security First**: Prioritize secure coding practices, especially for authentication and data handling
+- **Compliance Mindset**: Consider regulatory requirements in healthcare workflows
+- **Patient Safety**: Workflows should never compromise patient safety or care quality
+- **Data Privacy**: Respect privacy regulations and data protection principles
+
+> ⚕️ **Important**: Never include real patient data, PHI, or sensitive healthcare information in contributions, issues, or pull requests.
+
+## Ways to Contribute
+
+There are many ways to contribute to Caphè Technologies Workflows:
+
+1. **Workflow Templates**: Share workflow automation solutions for common healthcare scenarios
+2. **Code Improvements**: Enhance existing features, fix bugs, or optimize performance
+3. **Documentation**: Improve guides, tutorials, or API documentation
+4. **Testing**: Add test coverage or identify bugs
+5. **Community Support**: Help others in discussions or troubleshooting
+6. **Feature Suggestions**: Propose new features or enhancements
+
+## Workflow Contributions
+
+### Metadata Requirements
+
+All workflow contributions **must** include complete metadata:
+
+```json
+{
+  "workflowName": "Descriptive Workflow Name",
+  "description": "Clear description of what the workflow does",
+  "category": "healthcare-staffing | patient-care | compliance | etc.",
+  "subcategory": "specific-use-case",
+  "complexity": "beginner | intermediate | advanced",
+  "estimatedSetupTime": "5-10 minutes",
+  "prerequisites": ["Required services", "API keys", "etc."],
+  "tags": ["relevant", "searchable", "tags"],
+  "author": "Your Name",
+  "dateAdded": "YYYY-MM-DD",
+  "lastUpdated": "YYYY-MM-DD"
+}
+```
+
+See [workflows/METADATA_GUIDE.md](workflows/METADATA_GUIDE.md) for detailed guidelines.
+
+### Workflow Quality Standards
+
+- **Clear Naming**: Use descriptive names for nodes and connections
+- **Documentation**: Include inline comments explaining logic
+- **Error Handling**: Implement proper error handling and fallbacks
+- **Testing**: Test workflows thoroughly with sample data
+- **Privacy**: Remove any sensitive or identifying information
+- **Compliance**: Ensure workflows meet healthcare compliance requirements
+
+### Submitting Workflows
+
+1. Create your workflow with complete metadata
+2. Test thoroughly with representative data (no PHI!)
+3. Export the workflow JSON
+4. Place in appropriate category folder under `/workflows/`
+5. Update the category README with your workflow
+6. Submit a pull request with clear description
+
+## Code Contributions
+
+### Code Quality Standards
+
+- **TypeScript**: Use TypeScript for type safety (no `ts-ignore`)
+- **Linting**: Follow ESLint rules and Biome formatting
+- **Testing**: Include unit tests, integration tests, and E2E tests where applicable
+- **Documentation**: Add JSDoc comments for functions and complex logic
+- **Security**: Follow secure coding practices, especially for authentication and data handling
+
+### Before You Start
+
+1. Check existing issues and pull requests to avoid duplication
+2. For major changes, open an issue first to discuss your approach
+3. Ensure your development environment is properly set up
+4. Review our [Code of Conduct](CODE_OF_CONDUCT.md)
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature-name`
+3. Make your changes following our coding standards
+4. Write or update tests
+5. Run the full test suite: `pnpm test`
+6. Commit with clear, descriptive messages
+7. Push to your fork
+8. Open a pull request with a comprehensive description
+
+### Pull Request Guidelines
+
+- **One Feature Per PR**: Keep pull requests focused on a single feature or fix
+- **Descriptive Titles**: Use clear, descriptive PR titles
+- **Comprehensive Description**: Explain what changes were made and why
+- **Tests Required**: Include appropriate test coverage
+- **Documentation**: Update documentation for any user-facing changes
+- **Review Feedback**: Respond to review comments within 14 days
 
 ## Code of conduct
 
-This project and everyone participating in it are governed by the Code of
-Conduct which can be found in the file [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
-By participating, you are expected to uphold this code. Please report
-unacceptable behavior to jan@n8n.io.
+## Directory Structure
 
-## Directory structure
+Caphè Technologies Workflows is organized as a monorepo with multiple packages:
 
-n8n is split up in different modules which are all in a single mono repository.
+**Key Directories:**
 
-The most important directories:
-
-- [/docker/images](/docker/images) - Dockerfiles to create n8n containers
-- [/packages](/packages) - The different n8n modules
-- [/packages/cli](/packages/cli) - CLI code to run front- & backend
-- [/packages/core](/packages/core) - Core code which handles workflow
-  execution, active webhooks and
-  workflows. **Contact n8n before
-  starting on any changes here**
-- [/packages/frontend/@n8n/design-system](/packages/design-system) - Vue frontend components
-- [/packages/frontend/editor-ui](/packages/editor-ui) - Vue frontend workflow editor
-- [/packages/node-dev](/packages/node-dev) - CLI to create new n8n-nodes
-- [/packages/nodes-base](/packages/nodes-base) - Base n8n nodes
-- [/packages/workflow](/packages/workflow) - Workflow code with interfaces which
-  get used by front- & backend
+- [/workflows](/workflows) - 2,080+ workflow templates organized by category
+- [/frameworks/caphe-workflows](/frameworks/caphe-workflows) - Python Flask API server
+- [/caphe-workflows-ui](/caphe-workflows-ui) - React + Vite frontend for workflow browsing
+- [/caphe-workflows-frontend](/caphe-workflows-frontend) - Additional frontend components
+- [/packages](/packages) - Core n8n modules (underlying platform)
+- [/packages/cli](/packages/cli) - CLI code for front- & backend
+- [/packages/core](/packages/core) - Core workflow execution engine
+- [/packages/nodes-base](/packages/nodes-base) - Base nodes and integrations
+- [/packages/workflow](/packages/workflow) - Workflow interfaces
+- [/docker/images](/docker/images) - Docker container configurations
 
 ## Development setup
 
@@ -132,63 +246,67 @@ brew install actionlint
 ```
 > **Note:** actionlint is only required if you're modifying workflow files. It runs automatically via git hooks when workflow files are changed.
 
-### Actual n8n setup
+### Actual Setup
 
-> **IMPORTANT**: All the steps below have to get executed at least once to get the development setup up and running!
+> **IMPORTANT**: All the steps below must be executed at least once to get the development setup running!
 
-Now that everything n8n requires to run is installed, the actual n8n code can be
-checked out and set up:
+Now that all prerequisites are installed, set up the Caphè Technologies Workflows codebase:
 
-1. [Fork](https://guides.github.com/activities/forking/#fork) the n8n repository.
+1. [Fork](https://guides.github.com/activities/forking/#fork) the Caphè Technologies Workflows repository.
 
 2. Clone your forked repository:
 
-   ```
-   git clone https://github.com/<your_github_username>/n8n.git
+   ```bash
+   git clone https://github.com/<your_github_username>/Caphe-Technologies-Workflows.git
    ```
 
 3. Go into repository folder:
 
-   ```
-   cd n8n
-   ```
-
-4. Add the original n8n repository as `upstream` to your forked repository:
-
-   ```
-   git remote add upstream https://github.com/n8n-io/n8n.git
+   ```bash
+   cd Caphe-Technologies-Workflows
    ```
 
-5. Install all dependencies of all modules and link them together:
+4. Add the original repository as `upstream`:
 
+   ```bash
+   git remote add upstream https://github.com/Zo-Valentine/Caphe-Technologies-Workflows.git
    ```
+
+5. Install all dependencies and link modules:
+
+   ```bash
    pnpm install
    ```
 
 6. Build all the code:
-   ```
+   ```bash
    pnpm build
    ```
 
 ### Start
 
-To start n8n execute:
+To start the application:
 
-```
+```bash
 pnpm start
 ```
 
-To start n8n with tunnel:
+To start with tunnel (for webhook testing):
 
-```
+```bash
 ./packages/cli/bin/n8n start --tunnel
 ```
 
-## Development cycle
+To start the Python API server (for workflow management):
 
-While iterating on n8n modules code, you can run `pnpm dev`. It will then
-automatically build your code, restart the backend and refresh the frontend
-(editor-ui) on every change you make.
+```bash
+cd frameworks/caphe-workflows
+python run.py
+```
+
+## Development Cycle
+
+While iterating on code, you can run `pnpm dev`. It will automatically build your code, restart the backend, and refresh the frontend on every change you make.
 
 ### Basic Development Workflow
 
@@ -335,12 +453,16 @@ Please address the requested changes or provide feedback within 14 days. If ther
 
 - **Small PRs Only:**
   - Focus on a single feature or fix per PR.
-- **Naming Convention:**
-  - Follow [n8n's PR Title Conventions](https://github.com/n8n-io/n8n/blob/master/.github/pull_request_title_conventions.md#L36).
+- **Descriptive Titles:**
+  - Use clear, descriptive titles that explain the change.
 - **New Nodes:**
-  - PRs that introduce new nodes will be **auto-closed** unless they are explicitly requested by the n8n team and aligned with an agreed project scope. However, you can still explore [building your own nodes](https://docs.n8n.io/integrations/creating-nodes/overview/), as n8n offers the flexibility to create your own custom nodes.
+  - New node proposals should be discussed in an issue first. PRs for custom nodes should include comprehensive documentation, tests, and healthcare-appropriate error handling.
+- **Workflow Contributions:**
+  - All workflow contributions must include complete metadata (see [Workflow Contributions](#workflow-contributions)).
+- **Healthcare Compliance:**
+  - Code touching patient data, PHI, or healthcare workflows must include security review comments.
 - **Typo-Only PRs:**
-  - Typos are not sufficient justification for a PR and will be rejected.
+  - Minor typo fixes should be bundled with other changes when possible.
 
 #### **4. Workflow Summary for Non-Compliant PRs**
 
@@ -370,11 +492,11 @@ If you made a change which requires an update on a `.test.ts.snap` file, pass `-
 We track coverage for all our code on [Codecov](https://app.codecov.io/gh/n8n-io/n8n).
 But when you are working on tests locally, we recommend running your tests with env variable `COVERAGE_ENABLED` set to `true`. You can then view the code coverage in the `coverage` folder, or you can use [this VSCode extension](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) to visualize the coverage directly in VSCode.
 
-#### E2E tests
+#### E2E Tests
 
-n8n uses [Playwright](https://playwright.dev) for E2E testing.
+We use [Playwright](https://playwright.dev) for end-to-end testing.
 
-E2E tests can be started via one of the following commands:
+E2E tests can be started via:
 
 - `pnpm --filter=n8n-playwright test:local` - Run tests locally (starts local server on port 5680 and runs UI tests)
 - `pnpm --filter=n8n-playwright test:local --ui` - Run tests in interactive UI mode (useful for debugging)
@@ -382,42 +504,90 @@ E2E tests can be started via one of the following commands:
 
 See `packages/testing/playwright/README.md` for more test commands and `packages/testing/playwright/CONTRIBUTING.md` for writing guidelines.
 
-## Releasing
+**Healthcare Testing Considerations:**
+- Never use real PHI in test data
+- Test with realistic but synthetic healthcare scenarios
+- Verify proper error handling for HIPAA compliance scenarios
+- Test authentication and authorization thoroughly
 
-To start a release, trigger [this workflow](https://github.com/n8n-io/n8n/actions/workflows/release-create-pr.yml) with the SemVer release type, and select a branch to cut this release from. This workflow will then:
+## Create Custom Nodes
 
-1. Bump versions of packages that have changed or have dependencies that have changed
-2. Update the Changelog
-3. Create a new branch called `release/${VERSION}`, and
-4. Create a new pull-request to track any further changes that need to be included in this release
+Learn about [building nodes](https://docs.n8n.io/integrations/creating-nodes/overview/) to create custom nodes. You can create community nodes and make them available.
 
-Once ready to release, simply merge the pull-request.
-This triggers [another workflow](https://github.com/n8n-io/n8n/actions/workflows/release-publish.yml), that will:
+**Healthcare Node Development:**
+- Include comprehensive error handling
+- Document HIPAA considerations
+- Implement proper authentication and authorization
+- Add data validation for healthcare data formats
+- Include audit logging where appropriate
 
-1. Build and publish the packages that have a new version in this release
-2. Create a new tag, and GitHub release from squashed release commit
-3. Merge the squashed release commit back into `master`
+## Documentation
 
-## Create custom nodes
+Good documentation helps everyone. Contributions to documentation are highly valued:
 
-Learn about [building nodes](https://docs.n8n.io/integrations/creating-nodes/overview/) to create custom nodes for n8n. You can create community nodes and make them available using [npm](https://www.npmjs.com/).
+- **Code Documentation**: JSDoc comments, inline explanations
+- **Workflow Documentation**: Clear descriptions in metadata
+- **User Guides**: Step-by-step tutorials
+- **API Documentation**: Comprehensive endpoint documentation
+- **Healthcare Examples**: Real-world (but sanitized) use cases
 
-## Extend documentation
-
-The repository for the n8n documentation on [docs.n8n.io](https://docs.n8n.io) can be found [here](https://github.com/n8n-io/n8n-docs).
-
-## Contribute workflow templates
-
-You can submit your workflows to n8n's template library.
-
-n8n is working on a creator program, and developing a marketplace of templates. This is an ongoing project, and details are likely to change.
-
-Refer to [n8n Creator hub](https://www.notion.so/n8n/n8n-Creator-hub-7bd2cbe0fce0449198ecb23ff4a2f76f) for information on how to submit templates and become a creator.
+Documentation should be:
+- Clear and concise
+- Technically accurate
+- Free of jargon where possible
+- Inclusive and accessible
 
 ## Contributor License Agreement
 
-That we do not have any potential problems later it is sadly necessary to sign a [Contributor License Agreement](CONTRIBUTOR_LICENSE_AGREEMENT.md). That can be done literally with the push of a button.
+To ensure clarity around intellectual property and licensing, contributors are required to sign a [Contributor License Agreement](CONTRIBUTOR_LICENSE_AGREEMENT.md). This is a straightforward process.
 
-We used the most simple one that exists. It is from [Indie Open Source](https://indieopensource.com/forms/cla) which uses plain English and is literally only a few lines long.
+The CLA ensures:
+- You retain copyright to your contributions
+- Caphè Technologies can use your contributions under the project's licenses
+- The project remains legally sound and maintainable
+- All contributors are protected
 
-Once a pull request is opened, an automated bot will promptly leave a comment requesting the agreement to be signed. The pull request can only be merged once the signature is obtained.
+**Key Points:**
+- By contributing, you agree that your contributions will be dual-licensed under:
+  - The n8n Sustainable Use License (for base platform components)
+  - The Caphè Technologies Proprietary License (for proprietary enhancements)
+- You certify that you have the right to submit your contribution
+- You understand the healthcare and compliance implications of your code
+
+For licensing questions, contact: licensing@caphetechnologies.com
+
+## Recognition
+
+We value and recognize our contributors:
+
+- All contributors are listed in our CONTRIBUTORS.md file
+- Significant contributions are highlighted in release notes
+- Active community members may be invited to join our healthcare advisory board
+- Workflow template authors are credited in the workflow metadata
+
+**Ways We Recognize Contributions:**
+- 🏆 Featured workflows and templates
+- 📝 Blog posts highlighting community contributions
+- 🎤 Speaking opportunities at Caphè Technologies events
+- 🌟 Community spotlight in newsletters
+
+---
+
+## Getting Help
+
+If you need help or have questions:
+
+- **Technical Questions**: Open a discussion on GitHub
+- **Code of Conduct Issues**: conduct@caphetechnologies.com
+- **Licensing Questions**: licensing@caphetechnologies.com
+- **General Inquiries**: Use GitHub discussions
+
+## Thank You! ☕
+
+Thank you for contributing to Caphè Technologies Workflows. Your work helps healthcare organizations deliver better care through automation and efficiency. Every contribution, no matter how small, makes a difference.
+
+Together, we're building technology that serves healthcare professionals and improves patient outcomes.
+
+---
+
+**License Notice**: This project is dual-licensed. See [LICENSE.md](LICENSE.md) for the n8n Sustainable Use License and [LICENSE_CAPHE.md](LICENSE_CAPHE.md) for the Caphè Technologies Proprietary License. By contributing, you agree to license your contributions under both licenses.

@@ -1,76 +1,152 @@
-# Contributor Covenant Code of Conduct
+# Caphè Technologies Code of Conduct
+
+**Version 1.0 - Effective November 22, 2025**
+
+---
 
 ## Our Pledge
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, sex characteristics, gender identity and expression,
-level of experience, education, socio-economic status, nationality, personal
-appearance, race, religion, or sexual identity and orientation.
+At Caphè Technologies, we are committed to fostering an open, welcoming, and inclusive community. We pledge to make participation in our project and community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+We are dedicated to building workflow automation solutions that serve diverse industries, especially healthcare, and we believe our community should reflect that diversity and commitment to excellence.
+
+---
+
+## Our Values
+
+### ☕ Excellence
+We strive for excellence in everything we do, from code quality to community interactions. We believe in continuous improvement and learning.
+
+### 🤝 Collaboration
+We value collaboration over competition. We work together to build better solutions and support each other's growth.
+
+### 💙 Empathy
+We approach every interaction with empathy and understanding. We recognize that behind every username is a person with their own challenges and perspectives.
+
+### 🎯 Professionalism
+We maintain professional standards in our communications and conduct, especially given our focus on healthcare and enterprise automation.
+
+### 🌟 Innovation
+We encourage creative thinking and innovation while respecting established best practices and security standards.
+
+---
 
 ## Our Standards
 
-Examples of behavior that contributes to creating a positive environment
-include:
+### Positive Behaviors
 
+Examples of behavior that contributes to a positive environment:
+
+✅ **Respectful Communication**
 - Using welcoming and inclusive language
 - Being respectful of differing viewpoints and experiences
 - Gracefully accepting constructive criticism
 - Focusing on what is best for the community
-- Showing empathy towards other community members
 
-Examples of unacceptable behavior by participants include:
+✅ **Collaborative Spirit**
+- Helping others learn and grow
+- Sharing knowledge and expertise generously
+- Contributing constructively to discussions
+- Supporting community members in their projects
 
-- The use of sexualized language or imagery and unwelcome sexual attention or
-  advances
-- Trolling, insulting/derogatory comments, and personal or political attacks
+✅ **Professional Conduct**
+- Being patient with beginners and those learning
+- Providing actionable, constructive feedback
+- Acknowledging contributions and giving credit where due
+- Maintaining confidentiality when appropriate
+
+✅ **Quality Contributions**
+- Writing clear, well-documented code
+- Testing thoroughly before submitting
+- Following project guidelines and conventions
+- Responding promptly to feedback and questions
+
+### Unacceptable Behaviors
+
+Examples of unacceptable behavior:
+
+❌ **Harassment and Discrimination**
+- Trolling, insulting/derogatory comments, and personal attacks
 - Public or private harassment
-- Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-- Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+- Sexual language, imagery, or unwelcome sexual attention
+- Discriminatory jokes or language
 
-## Our Responsibilities
+❌ **Unprofessional Conduct**
+- Publishing others' private information without permission
+- Deliberately spreading misinformation
+- Spamming or excessive self-promotion
+- Disrupting discussions or project work
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+❌ **Malicious Actions**
+- Introducing malicious code or security vulnerabilities
+- Attempting to gain unauthorized access to systems
+- Violating privacy or data protection regulations
+- Misusing healthcare data or workflows
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+❌ **Intellectual Property Violations**
+- Violating license terms
+- Plagiarizing code or content
+- Unauthorized commercial use of proprietary components
+- Removing or altering attribution
 
-## Scope
+---
 
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
+## Healthcare Industry Standards
+
+Given our focus on healthcare workflows, we hold ourselves to additional standards:
+
+### 🏥 HIPAA Awareness
+- Never share Protected Health Information (PHI) in public channels
+- Respect patient privacy and confidentiality
+- Follow healthcare data handling best practices
+- Report potential compliance issues immediately
+
+### 🔒 Security First
+- Prioritize security in all contributions
+- Report security vulnerabilities responsibly
+- Follow secure coding practices
+- Respect access controls and permissions
+
+### ✓ Compliance Mindset
+- Understand regulatory requirements
+- Document compliance considerations
+- Test workflows for compliance issues
+- Seek guidance when uncertain
+
+---
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at jan@n8n.io. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+### Reporting Violations
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+If you experience or witness unacceptable behavior, please report it by:
+
+- **Email**: conduct@caphetechnologies.com
+- **GitHub**: Use the "Report content" feature on GitHub
+
+All reports will be reviewed and investigated promptly and fairly.
+
+### Enforcement Guidelines
+
+**1. Correction**: Private warning for inappropriate language or unprofessional behavior
+
+**2. Warning**: Warning with consequences for continued behavior, including temporary interaction restrictions
+
+**3. Temporary Ban**: Temporary ban from community interaction for serious violations
+
+**4. Permanent Ban**: Permanent ban for pattern of violations, sustained inappropriate behavior, or harassment
+
+---
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1, and healthcare industry best practices.
 
-[homepage]: https://www.contributor-covenant.org
+---
 
-For answers to common questions about this code of conduct, see
-https://www.contributor-covenant.org/faq
+**Caphè Technologies** | *Excellence in Workflow Automation*
+
+**Last Updated**: November 22, 2025 | **Version**: 1.0.0
+
+*For licensing questions, see [LICENSE_CAPHE.md](./LICENSE_CAPHE.md)*  
+*For contribution guidelines, see [CONTRIBUTING.md](./CONTRIBUTING.md)*
