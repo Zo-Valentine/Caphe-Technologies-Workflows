@@ -2,31 +2,45 @@
 
 **Enterprise Workflow Automation Platform**
 
-Caphè Technologies Workflows is a comprehensive workflow automation ecosystem built on n8n, featuring production-ready templates, a powerful API server, and intuitive frontend interfaces for healthcare staffing and enterprise automation needs.
+Caphè Technologies Workflows is a comprehensive workflow automation ecosystem built on n8n, featuring production-ready templates, a powerful API server, and an intuitive web interface for healthcare staffing and enterprise automation needs.
 
-![Caphè Technologies Workflows Dashboard](./assets/caphe-workflows-screenshot.png)
+![Caphè Technologies](./assets/caphe_logo.png)
 
 ## 🚀 Overview
 
 This repository contains a complete workflow automation solution with:
 
-- **400+ Production-Ready Workflows**: Categorized templates for healthcare, HR, marketing, finance, and more
-- **Python API Server**: RESTful API for workflow management and integration
-- **React Frontend Applications**: Modern UI for workflow browsing and management
-- **Healthcare Focus**: Specialized workflows for staffing, compliance, and patient care
-- **AI-Powered Automation**: LangChain integration for intelligent workflow processing
+- **2,080+ Production-Ready Workflows**: Integrated n8n templates across 187 categories
+- **FastAPI Server**: High-performance RESTful API for workflow management
+- **Healthcare Focus**: 12+ specialized workflows for staffing, compliance, and patient care
+- **AI-Powered Automation**: LangChain, OpenAI, and vector store integration
+- **Full-Text Search**: SQLite FTS5 for instant workflow discovery
+- **Single Source of Truth**: All workflows centralized in frameworks directory
 
 ## 📦 Project Structure
 
 ```
 Caphè-Technologies-Workflows/
-├── workflows/              # Workflow templates organized by category
+│
 ├── frameworks/
-│   └── caphe-workflows/   # Python API server
-├── caphe-workflows-ui/    # Primary React frontend
-├── caphe-workflows-frontend/ # Alternative frontend interface
-├── scripts/               # Deployment and integration scripts
-└── packages/              # n8n core packages and extensions
+│   └── caphe-workflows/          ⭐ SINGLE SOURCE OF TRUTH
+│       ├── workflows/            # All 2,080+ workflows (187 categories)
+│       ├── workflows.db          # SQLite database with FTS5 search
+│       ├── api_server.py         # FastAPI server
+│       ├── workflow_db.py        # Database management
+│       ├── run.py                # Server launcher
+│       └── static/
+│           ├── index.html        # Main web interface
+│           └── caphe_logo.png    # Caphè branding
+│
+├── workflows/                    # Documentation & guides
+│   ├── README.md                 # Workflow documentation
+│   ├── METADATA_GUIDE.md         # Metadata standards
+│   └── _archive/                 # Historical workflow files
+│
+├── scripts/                      # Integration & deployment
+├── packages/                     # n8n core packages
+└── assets/                       # Logo and branding
 ```
 
 ## 🎯 Key Features
@@ -61,43 +75,52 @@ Specialized workflows for healthcare staffing and operations:
 ## 🔧 Quick Start
 
 ### Prerequisites
-- Node.js 18+ (for n8n and frontend)
-- Python 3.9+ (for API server)
-- Docker (optional, for containerized deployment)
+- **Python 3.9+** (for API server)
+- **Virtual Environment** (recommended)
+- **Node.js 18+** (optional, for n8n development)
+- **Docker** (optional, for containerized deployment)
 
-### Running the API Server
+### Running the Production Server
 
 ```bash
-# Navigate to the framework directory
+# Activate virtual environment
+source caphe.env/bin/activate  # macOS/Linux
+# or: caphe.env\Scripts\activate  # Windows
+
+# Navigate to framework directory
 cd frameworks/caphe-workflows
 
-# Install dependencies
+# Install dependencies (if not already installed)
 pip install -r requirements.txt
 
 # Start the server
 python3 run.py
 ```
 
-The API server will be available at `http://localhost:8000`
+**Server will be available at:**
+- 🌐 Frontend: http://127.0.0.1:8000
+- 📚 API Docs: http://127.0.0.1:8000/docs
+- 🔍 Search API: http://127.0.0.1:8000/api/workflows
 
-### Running the Frontend
+### Access the Platform
 
-```bash
-# Navigate to the UI directory
-cd caphe-workflows-ui
+1. **Open your browser** to http://127.0.0.1:8000
+2. **Search workflows** using the search bar
+3. **Browse by category** using the sidebar
+4. **View workflow details** by clicking on any workflow
+5. **Copy JSON** for import into n8n
 
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-The frontend will be available at `http://localhost:5173`
-
-### Using n8n
+### Using the API
 
 ```bash
+# Get workflow statistics
+curl http://127.0.0.1:8000/api/stats
+
+# Search workflows
+curl "http://127.0.0.1:8000/api/workflows?q=healthcare"
+
+# Get specific workflow
+curl "http://127.0.0.1:8000/api/workflows/5001"
 # Using npx
 npx n8n
 
