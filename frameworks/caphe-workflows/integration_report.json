@@ -1,0 +1,460 @@
+{
+  "integration_date": "2025-11-23T04:34:11.516416",
+  "source_directory": "/Users/Apple/Caphe Workflows/workflows",
+  "target_directory": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows",
+  "category_mapping": {
+    "content-media": "Openai",
+    "customer-service": "Slack",
+    "data-analytics": "Googlesheets",
+    "ecommerce": "Shopify",
+    "education": "Notion",
+    "finance-accounting": "Quickbooks",
+    "general-utilities": "Automation",
+    "healthcare": "Automation",
+    "human-resources": "Gmail",
+    "it-development": "Github",
+    "marketing-sales": "Hubspot",
+    "operations-logistics": "Airtable"
+  },
+  "results": {
+    "total_processed": 23,
+    "successful": 23,
+    "failed": 0,
+    "results": [
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/content-media/asset-management/knowledge-store-agent.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/content-media/asset-management/knowledge-store-agent-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Openai/5001_Openai_KnowledgeStoreAgentw_content-media_Enhanced.json",
+        "category": "content-media",
+        "integration_category": "Openai",
+        "workflow_name": "Knowledge Store Agent (with Google Drive)"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/scheduling/workflow-logic-tutorial.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/scheduling/workflow-logic-tutorial-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5002_Automation_WorkflowLogicTutoria_general-utilities_Enhanced.json",
+        "category": "general-utilities",
+        "integration_category": "Automation",
+        "workflow_name": "Workflow Logic Tutorial"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/scheduling/calendar-agent.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/scheduling/calendar-agent-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5003_Automation_CalendarAgentwithGoo_general-utilities_Enhanced.json",
+        "category": "general-utilities",
+        "integration_category": "Automation",
+        "workflow_name": "Calendar Agent (with Google Calendar)"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/joke-agent.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/joke-agent-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5004_Automation_JokeAgentwithHTTPToo_general-utilities_Enhanced.json",
+        "category": "general-utilities",
+        "integration_category": "Automation",
+        "workflow_name": "Joke Agent (with HTTP Tool)"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/easy-ai-starter.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/easy-ai-starter-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5005_Automation_EasyAIStarter_general-utilities_Enhanced.json",
+        "category": "general-utilities",
+        "integration_category": "Automation",
+        "workflow_name": "Easy AI Starter"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/build-first-ai-agent-tutorial.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/build-first-ai-agent-tutorial-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5006_Automation_BuildYourFirstAIAgen_general-utilities_Enhanced.json",
+        "category": "general-utilities",
+        "integration_category": "Automation",
+        "workflow_name": "Build Your First AI Agent - Tutorial"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/data-analytics/data-collection/task-management-agent.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/data-analytics/data-collection/task-management-agent-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Googlesheets/5007_Googlesheets_TaskManagementAgentw_data-analytics_Enhanced.json",
+        "category": "data-analytics",
+        "integration_category": "Googlesheets",
+        "workflow_name": "Task Management Agent (with Google Sheets)"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/data-analytics/business-intelligence/rag-starter.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/data-analytics/business-intelligence/rag-starter-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Googlesheets/5008_Googlesheets_RAGRetrievalAugmente_data-analytics_Enhanced.json",
+        "category": "data-analytics",
+        "integration_category": "Googlesheets",
+        "workflow_name": "RAG (Retrieval-Augmented Generation) Starter"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/customer-service/support-workflows/email-triage-agent.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/customer-service/support-workflows/email-triage-agent-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Slack/5009_Slack_EmailTriageAgentwith_customer-service_Enhanced.json",
+        "category": "customer-service",
+        "integration_category": "Slack",
+        "workflow_name": "Email Triage Agent (with Gmail)"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/customer-service/chat-automation/voice-agent.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/customer-service/chat-automation/voice-agent-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Slack/5010_Slack_VoiceAssistantAgentw_customer-service_Enhanced.json",
+        "category": "customer-service",
+        "integration_category": "Slack",
+        "workflow_name": "Voice Assistant Agent (with Telegram)"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/resume-parsing-profile-enrichment.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/resume-parsing-profile-enrichment-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5011_Automation_ResumeParsingProfile_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Resume Parsing & Profile Enrichment"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/rn-cna-job-application-lead-capture.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/rn-cna-job-application-lead-capture-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5012_Automation_RNCNAJobApplicationL_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "RN/CNA Job Application Lead Capture"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/shift-matching-availability.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/shift-matching-availability-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5013_Automation_HealthcareStaffingSh_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Healthcare Staffing - Shift Matching & Availability"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/interview-scheduling-automation.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/interview-scheduling-automation-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5014_Automation_InterviewSchedulingA_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Interview Scheduling Automation"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/lead-routing-assignment.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/lead-routing-assignment-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5015_Automation_HealthcareStaffingLe_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Healthcare Staffing - Lead Routing & Assignment"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/compliance-background-check.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/compliance-background-check-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5016_Automation_HealthcareStaffingCo_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Healthcare Staffing - Compliance & Background Check"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/license-credential-verification.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/license-credential-verification-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5017_Automation_LicenseCredentialVer_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "License & Credential Verification"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/candidate-segmentation.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/candidate-segmentation-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5018_Automation_HealthcareStaffingCa_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Healthcare Staffing - Candidate Segmentation"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/employee-referral-program.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/employee-referral-program-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5019_Automation_HealthcareStaffingEm_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Healthcare Staffing - Employee Referral Program"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/followup-drip-campaign.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/followup-drip-campaign-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5020_Automation_HealthcareStaffingFo_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Healthcare Staffing - Follow-up Drip Campaign"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/candidate-followup-drip-campaign.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/candidate-followup-drip-campaign-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5021_Automation_CandidateFollowupDri_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Candidate Followup Drip Campaign"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/telegram-quick-response-bot.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/telegram-quick-response-bot-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5022_Automation_TelegramQuickRespons_healthcare_Enhanced.json",
+        "category": "healthcare",
+        "integration_category": "Automation",
+        "workflow_name": "Telegram Quick Response Bot"
+      },
+      {
+        "success": true,
+        "source_workflow": "/Users/Apple/Caphe Workflows/workflows/it-development/code-integration/api-fundamentals-tutorial.json",
+        "source_metadata": "/Users/Apple/Caphe Workflows/workflows/it-development/code-integration/api-fundamentals-tutorial-metadata.json",
+        "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Github/5023_Github_APIFundamentalsTutor_it-development_Enhanced.json",
+        "category": "it-development",
+        "integration_category": "Github",
+        "workflow_name": "API Fundamentals Tutorial"
+      }
+    ],
+    "category_breakdown": {
+      "content-media": [
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/content-media/asset-management/knowledge-store-agent.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/content-media/asset-management/knowledge-store-agent-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Openai/5001_Openai_KnowledgeStoreAgentw_content-media_Enhanced.json",
+          "category": "content-media",
+          "integration_category": "Openai",
+          "workflow_name": "Knowledge Store Agent (with Google Drive)"
+        }
+      ],
+      "general-utilities": [
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/scheduling/workflow-logic-tutorial.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/scheduling/workflow-logic-tutorial-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5002_Automation_WorkflowLogicTutoria_general-utilities_Enhanced.json",
+          "category": "general-utilities",
+          "integration_category": "Automation",
+          "workflow_name": "Workflow Logic Tutorial"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/scheduling/calendar-agent.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/scheduling/calendar-agent-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5003_Automation_CalendarAgentwithGoo_general-utilities_Enhanced.json",
+          "category": "general-utilities",
+          "integration_category": "Automation",
+          "workflow_name": "Calendar Agent (with Google Calendar)"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/joke-agent.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/joke-agent-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5004_Automation_JokeAgentwithHTTPToo_general-utilities_Enhanced.json",
+          "category": "general-utilities",
+          "integration_category": "Automation",
+          "workflow_name": "Joke Agent (with HTTP Tool)"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/easy-ai-starter.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/easy-ai-starter-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5005_Automation_EasyAIStarter_general-utilities_Enhanced.json",
+          "category": "general-utilities",
+          "integration_category": "Automation",
+          "workflow_name": "Easy AI Starter"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/build-first-ai-agent-tutorial.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/general-utilities/notifications/build-first-ai-agent-tutorial-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5006_Automation_BuildYourFirstAIAgen_general-utilities_Enhanced.json",
+          "category": "general-utilities",
+          "integration_category": "Automation",
+          "workflow_name": "Build Your First AI Agent - Tutorial"
+        }
+      ],
+      "data-analytics": [
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/data-analytics/data-collection/task-management-agent.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/data-analytics/data-collection/task-management-agent-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Googlesheets/5007_Googlesheets_TaskManagementAgentw_data-analytics_Enhanced.json",
+          "category": "data-analytics",
+          "integration_category": "Googlesheets",
+          "workflow_name": "Task Management Agent (with Google Sheets)"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/data-analytics/business-intelligence/rag-starter.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/data-analytics/business-intelligence/rag-starter-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Googlesheets/5008_Googlesheets_RAGRetrievalAugmente_data-analytics_Enhanced.json",
+          "category": "data-analytics",
+          "integration_category": "Googlesheets",
+          "workflow_name": "RAG (Retrieval-Augmented Generation) Starter"
+        }
+      ],
+      "customer-service": [
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/customer-service/support-workflows/email-triage-agent.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/customer-service/support-workflows/email-triage-agent-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Slack/5009_Slack_EmailTriageAgentwith_customer-service_Enhanced.json",
+          "category": "customer-service",
+          "integration_category": "Slack",
+          "workflow_name": "Email Triage Agent (with Gmail)"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/customer-service/chat-automation/voice-agent.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/customer-service/chat-automation/voice-agent-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Slack/5010_Slack_VoiceAssistantAgentw_customer-service_Enhanced.json",
+          "category": "customer-service",
+          "integration_category": "Slack",
+          "workflow_name": "Voice Assistant Agent (with Telegram)"
+        }
+      ],
+      "healthcare": [
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/resume-parsing-profile-enrichment.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/resume-parsing-profile-enrichment-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5011_Automation_ResumeParsingProfile_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Resume Parsing & Profile Enrichment"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/rn-cna-job-application-lead-capture.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/rn-cna-job-application-lead-capture-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5012_Automation_RNCNAJobApplicationL_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "RN/CNA Job Application Lead Capture"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/shift-matching-availability.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/shift-matching-availability-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5013_Automation_HealthcareStaffingSh_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Healthcare Staffing - Shift Matching & Availability"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/interview-scheduling-automation.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/appointments/interview-scheduling-automation-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5014_Automation_InterviewSchedulingA_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Interview Scheduling Automation"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/lead-routing-assignment.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/lead-routing-assignment-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5015_Automation_HealthcareStaffingLe_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Healthcare Staffing - Lead Routing & Assignment"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/compliance-background-check.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/compliance-background-check-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5016_Automation_HealthcareStaffingCo_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Healthcare Staffing - Compliance & Background Check"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/license-credential-verification.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/license-credential-verification-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5017_Automation_LicenseCredentialVer_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "License & Credential Verification"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/candidate-segmentation.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/candidate-segmentation-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5018_Automation_HealthcareStaffingCa_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Healthcare Staffing - Candidate Segmentation"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/employee-referral-program.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/compliance/employee-referral-program-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5019_Automation_HealthcareStaffingEm_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Healthcare Staffing - Employee Referral Program"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/followup-drip-campaign.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/followup-drip-campaign-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5020_Automation_HealthcareStaffingFo_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Healthcare Staffing - Follow-up Drip Campaign"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/candidate-followup-drip-campaign.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/candidate-followup-drip-campaign-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5021_Automation_CandidateFollowupDri_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Candidate Followup Drip Campaign"
+        },
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/telegram-quick-response-bot.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/healthcare/patient-notifications/telegram-quick-response-bot-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Automation/5022_Automation_TelegramQuickRespons_healthcare_Enhanced.json",
+          "category": "healthcare",
+          "integration_category": "Automation",
+          "workflow_name": "Telegram Quick Response Bot"
+        }
+      ],
+      "it-development": [
+        {
+          "success": true,
+          "source_workflow": "/Users/Apple/Caphe Workflows/workflows/it-development/code-integration/api-fundamentals-tutorial.json",
+          "source_metadata": "/Users/Apple/Caphe Workflows/workflows/it-development/code-integration/api-fundamentals-tutorial-metadata.json",
+          "target_file": "/Users/Apple/Caphe Workflows/frameworks/caphe-workflows/workflows/Github/5023_Github_APIFundamentalsTutor_it-development_Enhanced.json",
+          "category": "it-development",
+          "integration_category": "Github",
+          "workflow_name": "API Fundamentals Tutorial"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_workflows": 23,
+    "successful_integrations": 23,
+    "failed_integrations": 0,
+    "success_rate": "100.0%"
+  }
+}
